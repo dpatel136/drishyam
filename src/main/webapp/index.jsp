@@ -1,6 +1,6 @@
 <%@ page language="java"
-    contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+         contentType="text/html; charset=UTF-8"
+         pageEncoding="UTF-8"%>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -30,7 +30,8 @@ body {
     font-family: Arial, sans-serif;
 }
 
-/* NAVBAR */
+
+/* ================= NAVBAR ================= */
 
 .navbar {
     display: flex;
@@ -69,21 +70,21 @@ body {
 }
 
 
-/* HERO IMAGE */
+/* ================= REAL START IMAGE ================= */
 
-.hero-image {
+.start-image {
     width: 100%;
     background: #000;
 }
 
-.hero-image img {
+.start-image img {
     width: 100%;
     height: auto;
     display: block;
 }
 
 
-/* HERO CONTENT */
+/* ================= HERO CONTENT ================= */
 
 .hero-content {
     text-align: center;
@@ -110,7 +111,9 @@ body {
 
 .button {
     display: inline-block;
+
     margin: 10px;
+
     padding: 14px 25px;
 
     background: #ffcc00;
@@ -123,7 +126,7 @@ body {
 }
 
 
-/* SECTIONS */
+/* ================= SECTION ================= */
 
 .section {
     padding: 80px 7%;
@@ -137,34 +140,36 @@ body {
 }
 
 
-/* ABOUT */
+/* ================= ABOUT ================= */
 
 .about {
-    text-align: center;
     max-width: 900px;
     margin: auto;
+    text-align: center;
 }
 
 .about p {
     color: #bbb;
-    line-height: 1.8;
     font-size: 17px;
+    line-height: 1.8;
 }
 
 
-/* POSTER */
+/* ================= POSTER ================= */
 
 .poster {
     display: block;
+
     width: 100%;
     max-width: 900px;
+
     margin: 40px auto;
 
     border-radius: 12px;
 }
 
 
-/* CAST */
+/* ================= CAST ================= */
 
 .cast {
     text-align: center;
@@ -172,11 +177,15 @@ body {
 
 .cast h3 {
     color: #ffcc00;
-    margin: 20px;
+    margin-top: 25px;
+}
+
+.cast p {
+    color: #aaa;
 }
 
 
-/* GALLERY */
+/* ================= GALLERY ================= */
 
 .gallery {
     background: #0b0b0b;
@@ -190,7 +199,7 @@ body {
 }
 
 
-/* MOBILE */
+/* ================= MOBILE ================= */
 
 @media(max-width:768px) {
 
@@ -219,7 +228,7 @@ body {
 <body>
 
 
-<!-- NAVBAR -->
+<!-- ================= NAVBAR ================= -->
 
 <nav class="navbar">
 
@@ -250,9 +259,9 @@ body {
 </nav>
 
 
-<!-- EXACT DRISHYAM IMAGE -->
+<!-- ================= REAL DRISHYAM IMAGE AT START ================= -->
 
-<section class="hero-image" id="home">
+<section class="start-image" id="home">
 
     <img
         src="${pageContext.request.contextPath}/images/drishyam-poster.png"
@@ -261,7 +270,7 @@ body {
 </section>
 
 
-<!-- HERO -->
+<!-- ================= HERO TEXT ================= -->
 
 <section class="hero-content">
 
@@ -285,7 +294,7 @@ body {
 </section>
 
 
-<!-- ABOUT -->
+<!-- ================= ABOUT ================= -->
 
 <section class="section" id="about">
 
@@ -315,7 +324,7 @@ body {
 </section>
 
 
-<!-- CAST -->
+<!-- ================= CAST ================= -->
 
 <section class="section cast" id="cast">
 
@@ -324,21 +333,18 @@ body {
     </h2>
 
     <h3>Ajay Devgn</h3>
-
     <p>Vijay Salgaonkar</p>
 
     <h3>Tabu</h3>
-
     <p>Meera Deshmukh</p>
 
     <h3>Shriya Saran</h3>
-
     <p>Nandini Salgaonkar</p>
 
 </section>
 
 
-<!-- GALLERY -->
+<!-- ================= GALLERY ================= -->
 
 <section class="section gallery" id="gallery">
 
