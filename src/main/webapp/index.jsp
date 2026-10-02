@@ -5,6 +5,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -331,8 +332,6 @@ body {
     display: block;
 }
 
-/* Main poster */
-
 .gallery-card.poster img {
     object-fit: contain;
     background: #000;
@@ -486,6 +485,7 @@ footer span {
 }
 
 </style>
+
 </head>
 
 <body>
@@ -499,12 +499,19 @@ footer span {
     </div>
 
     <ul class="nav-links">
+
         <li><a href="#home">Home</a></li>
+
         <li><a href="#about">About</a></li>
+
         <li><a href="#cast">Cast</a></li>
+
         <li><a href="#gallery">Gallery</a></li>
+
         <li><a href="#project">My Project</a></li>
+
         <li><a href="#review">Review</a></li>
+
     </ul>
 
 </nav>
@@ -569,7 +576,6 @@ footer span {
 
         </div>
 
-
         <div class="poster-container">
 
             <img
@@ -586,23 +592,35 @@ footer span {
     <div class="info-grid">
 
         <div class="info-card">
+
             <h3>Genre</h3>
+
             <p>Crime / Thriller</p>
+
         </div>
 
         <div class="info-card">
+
             <h3>Language</h3>
+
             <p>Hindi</p>
+
         </div>
 
         <div class="info-card">
+
             <h3>Director</h3>
+
             <p>Abhishek Pathak</p>
+
         </div>
 
         <div class="info-card">
+
             <h3>Lead Actor</h3>
+
             <p>Ajay Devgn</p>
+
         </div>
 
     </div>
@@ -610,18 +628,18 @@ footer span {
 </section>
 
 
-<!-- ================= CAST ================= -->
+<!-- ================= STAR CAST ================= -->
 
 <section id="cast" class="section">
 
     <h2 class="section-title">
-        Star Cast
+        ⭐ Star Cast
     </h2>
 
     <div class="cast-container">
 
 
-        <!-- AJAY -->
+        <!-- 1. AJAY DEVGN -->
 
         <div class="actor">
 
@@ -637,7 +655,7 @@ footer span {
         </div>
 
 
-        <!-- SHRIYA -->
+        <!-- 2. SHRIYA SARAN -->
 
         <div class="actor">
 
@@ -653,7 +671,7 @@ footer span {
         </div>
 
 
-        <!-- TABU -->
+        <!-- 3. TABU -->
 
         <div class="actor">
 
@@ -669,7 +687,22 @@ footer span {
         </div>
 
 
-        <!-- ISHITA -->
+        <!-- 4. GAITONDE -->
+
+        <div class="actor">
+
+            <img
+                src="${pageContext.request.contextPath}/images/gaitonde.jpg"
+                alt="Gaitonde">
+
+            <h3>Gaitonde</h3>
+
+            <p>Gaitonde</p>
+
+        </div>
+
+
+        <!-- 5. ISHITA DUTTA -->
 
         <div class="actor">
 
@@ -684,6 +717,7 @@ footer span {
 
         </div>
 
+
     </div>
 
 </section>
@@ -697,11 +731,10 @@ footer span {
         Drishyam Gallery
     </h2>
 
-
     <div class="gallery-grid">
 
 
-        <!-- YOUR UPLOADED POSTER -->
+        <!-- POSTER -->
 
         <div class="gallery-card poster">
 
@@ -774,8 +807,6 @@ footer span {
             through a Jenkins CI/CD pipeline.
         </p>
 
-        <!-- YOUR LAPTOP / PROJECT IMAGE -->
-
         <img
             class="project-image"
             src="${pageContext.request.contextPath}/images/my-project.jpg"
@@ -824,7 +855,6 @@ footer span {
     </p>
 
 </footer>
-
 
 </body>
 </html>
