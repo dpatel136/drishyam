@@ -1,217 +1,164 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>Drishyam | Official Fan Website</title>
+<title>Drishyam | Movie Experience</title>
 
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      font-family: Arial, Helvetica, sans-serif;
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:'Inter',sans-serif;
+    background:#080808;
+    color:#fff;
+    overflow-x:hidden;
+}
+
+body.modal-open{
+    overflow:hidden;
+}
+
+/* ================= NAVBAR ================= */
+
+.navbar{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    z-index:1000;
+    padding:18px 6%;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    transition:.4s;
+}
+
+.navbar.scrolled{
+    background:rgba(5,5,5,.95);
+    backdrop-filter:blur(15px);
+    padding:13px 6%;
+    box-shadow:0 5px 25px rgba(0,0,0,.5);
+}
+
+.logo{
+    font-size:28px;
+    font-weight:800;
+    letter-spacing:4px;
+    color:#e50914;
+}
+
+.nav-links{
+    display:flex;
+    list-style:none;
+    gap:30px;
+}
+
+.nav-links a{
+    color:#fff;
+    text-decoration:none;
+    font-size:14px;
+    font-weight:600;
+    transition:.3s;
+}
+
+.nav-links a:hover{
+    color:#e50914;
+}
+
+.menu-btn{
+    display:none;
+    border:0;
+    background:none;
+    color:white;
+    font-size:28px;
+    cursor:pointer;
+}
+
+/* ================= HERO ================= */
+
+.hero{
+    min-height:100vh;
+    position:relative;
+    display:flex;
+    align-items:center;
+    padding:120px 7%;
+    background:
+        linear-gradient(90deg,#050505 0%,rgba(5,5,5,.92) 25%,rgba(5,5,5,.55) 60%,rgba(5,5,5,.2)),
+        url("https://images.unsplash.com/photo-1489599849927-2ee91cede3ba?auto=format&fit=crop&w=2200&q=90");
+    background-size:cover;
+    background-position:center;
+}
+
+.hero-content{
+    max-width:650px;
+    animation:heroIn 1.2s ease;
+}
+
+@keyframes heroIn{
+    from{
+        opacity:0;
+        transform:translateY(40px);
     }
-
-    html {
-      scroll-behavior: smooth;
+    to{
+        opacity:1;
+        transform:translateY(0);
     }
+}
 
-    body {
-      background: #080808;
-      color: white;
-    }
+.badge{
+    display:inline-block;
+    padding:8px 14px;
+    background:#e50914;
+    border-radius:4px;
+    font-size:12px;
+    font-weight:700;
+    margin-bottom:20px;
+}
 
-    /* NAVBAR */
-    nav {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      padding: 18px 7%;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      background: rgba(0, 0, 0, 0.85);
-      z-index: 1000;
-      backdrop-filter: blur(10px);
-    }
+.hero h1{
+    font-size:clamp(55px,10vw,120px);
+    letter-spacing:8px;
+    line-height:.95;
+    margin-bottom:25px;
+}
 
-    .logo {
-      font-size: 28px;
-      font-weight: bold;
-      letter-spacing: 3px;
-      color: #e50914;
-    }
+.hero h1 span{
+    color:#e50914;
+}
 
-    nav ul {
-      display: flex;
-      gap: 30px;
-      list-style: none;
-    }
+.hero-info{
+    display:flex;
+    gap:15px;
+    flex-wrap:wrap;
+    color:#ddd;
+    margin-bottom:22px;
+    font-size:14px;
+}
 
-    nav a {
-      color: white;
-      text-decoration: none;
-      font-size: 15px;
-      transition: 0.3s;
-    }
+.hero p{
+    color:#ccc;
+    line-height:1.8;
+    margin-bottom:30px;
+}
 
-    nav a:hover {
-      color: #e50914;
-    }
+.hero-buttons{
+    display:flex;
+    gap:15px;
+}
 
-    /* HERO */
-    .hero {
-      min-height: 100vh;
-      display: flex;
-      align-items: center;
-      padding: 100px 7%;
-      position: relative;
-      overflow: hidden;
-
-      background:
-        linear-gradient(
-          90deg,
-          rgba(0,0,0,0.95) 0%,
-          rgba(0,0,0,0.75) 45%,
-          rgba(0,0,0,0.25) 100%
-        ),
-        url("https://images.unsplash.com/photo-1489599849927-2ee91cede3ba?auto=format&fit=crop&w=2000&q=80");
-
-      background-size: cover;
-      background-position: center;
-    }
-
-    .hero-content {
-      max-width: 650px;
-    }
-
-    .hero h1 {
-      font-size: clamp(55px, 9vw, 110px);
-      letter-spacing: 8px;
-      margin-bottom: 10px;
-      text-transform: uppercase;
-    }
-
-    .hero h2 {
-      color: #e50914;
-      margin-bottom: 20px;
-      font-size: 24px;
-    }
-
-    .hero p {
-      line-height: 1.8;
-      color: #ddd;
-      margin-bottom: 30px;
-      font-size: 17px;
-    }
-
-    .buttons {
-      display: flex;
-      gap: 15px;
-    }
-
-    .btn {
-      padding: 14px 25px;
-      border-radius: 4px;
-      text-decoration: none;
-      font-weight: bold;
-      transition: 0.3s;
-    }
-
-    .primary {
-      background: #e50914;
-      color: white;
-    }
-
-    .secondary {
-      background: rgba(255,255,255,0.15);
-      color: white;
-      border: 1px solid #777;
-    }
-
-    .btn:hover {
-      transform: translateY(-3px);
-      opacity: 0.85;
-    }
-
-    /* GENERAL */
-    section {
-      padding: 90px 7%;
-    }
-
-    .section-title {
-      text-align: center;
-      font-size: 38px;
-      margin-bottom: 50px;
-    }
-
-    .section-title span {
-      color: #e50914;
-    }
-
-    /* ABOUT */
-    .about {
-      background: #101010;
-    }
-
-    .about-container {
-      max-width: 1000px;
-      margin: auto;
-      text-align: center;
-    }
-
-    .about-container p {
-      color: #ccc;
-      line-height: 1.9;
-      font-size: 17px;
-    }
-
-    .movie-info {
-      margin-top: 35px;
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 20px;
-    }
-
-    .info-box {
-      background: #181818;
-      padding: 25px;
-      border-radius: 8px;
-      border: 1px solid #292929;
-    }
-
-    .info-box h3 {
-      color: #e50914;
-      margin-bottom: 10px;
-    }
-
-    .info-box p {
-      font-size: 14px;
-    }
-
-    /* CAST */
-    .cast {
-      background: #080808;
-    }
-
-    .cast-grid {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 25px;
-    }
-
-    .cast-card {
-      background: #151515;
-      border-radius: 10px;
-      overflow: hidden;
-      transition: 0.4s;
-      border: 1px solid #252525;
-    }
-
-    .cast-card:hover {
-      transform: translateY(-10px);
-      border-color: #e50914;
-      box-shadow: 0 10px 30px
+.btn{
+    border:0;
+    padding:14px 24px;
+    border-radius:5px
