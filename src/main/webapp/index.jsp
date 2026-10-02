@@ -1,6 +1,6 @@
 <%@ page language="java"
-         contentType="text/html; charset=UTF-8"
-         pageEncoding="UTF-8"%>
+    contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -40,15 +40,15 @@ body {
 .navbar {
     position: sticky;
     top: 0;
-    z-index: 999;
+    z-index: 1000;
 
     display: flex;
     justify-content: space-between;
     align-items: center;
 
-    padding: 18px 7%;
+    padding: 18px 6%;
 
-    background: rgba(0,0,0,0.96);
+    background: rgba(5,5,5,0.97);
 
     border-bottom: 1px solid #333;
 }
@@ -67,9 +67,10 @@ body {
 }
 
 .nav-links a {
-    color: white;
+    color: #fff;
     text-decoration: none;
-    transition: 0.3s;
+    font-size: 14px;
+    transition: .3s;
 }
 
 .nav-links a:hover {
@@ -86,16 +87,16 @@ body {
     display: flex;
     align-items: center;
 
-    padding: 100px 7%;
+    padding: 80px 7%;
 
     background:
         linear-gradient(
             90deg,
-            rgba(0,0,0,0.95),
-            rgba(0,0,0,0.65),
-            rgba(0,0,0,0.25)
+            rgba(0,0,0,.92),
+            rgba(0,0,0,.65),
+            rgba(0,0,0,.30)
         ),
-        url("https://images.unsplash.com/photo-1485846234645-a62644f84728?auto=format&fit=crop&w=2000&q=80");
+        url("https://upload.wikimedia.org/wikipedia/commons/4/4c/Drishyam_star_cast_Ajay_Devgn%2C_Shriya_Saran_and_Tabu_with_suresh_sharma.jpg");
 
     background-size: cover;
     background-position: center;
@@ -107,24 +108,29 @@ body {
 
 .hero h1 {
     font-size: clamp(55px, 9vw, 100px);
+
     color: #ffcc00;
-    letter-spacing: 8px;
-    text-shadow: 0 0 30px rgba(255,204,0,0.5);
+
+    letter-spacing: 7px;
+
+    text-shadow:
+        0 0 15px #ff9900,
+        0 0 40px rgba(255,204,0,.4);
 }
 
 .hero h2 {
-    margin-top: 20px;
     font-size: 25px;
+    margin-top: 15px;
 }
 
 .hero p {
-    margin-top: 20px;
-    color: #ccc;
-    font-size: 17px;
+    color: #ddd;
     line-height: 1.8;
+    margin-top: 20px;
 }
 
 .button {
+
     display: inline-block;
 
     margin-top: 25px;
@@ -133,18 +139,22 @@ body {
     padding: 14px 25px;
 
     background: #ffcc00;
-    color: #050505;
+
+    color: #000;
 
     text-decoration: none;
+
     font-weight: bold;
 
-    border-radius: 5px;
+    border-radius: 6px;
 
-    transition: 0.3s;
+    transition: .3s;
 }
 
 .button:hover {
-    background: white;
+
+    background: #fff;
+
     transform: translateY(-3px);
 }
 
@@ -152,10 +162,12 @@ body {
 /* ================= COMMON ================= */
 
 .section {
-    padding: 80px 7%;
+
+    padding: 80px 6%;
 }
 
 .section-title {
+
     text-align: center;
 
     color: #ffcc00;
@@ -169,26 +181,27 @@ body {
 /* ================= ABOUT ================= */
 
 .about {
-    background: #0b0b0b;
-}
 
-.about-container {
-    max-width: 1000px;
-    margin: auto;
+    background: #0b0b0b;
 
     text-align: center;
 }
 
-.about-container p {
+.about-text {
+
+    max-width: 950px;
+
+    margin: auto;
+
     color: #bbb;
 
-    font-size: 17px;
-
     line-height: 1.9;
+
+    font-size: 17px;
 }
 
 
-/* ================= MOVIE DETAILS ================= */
+/* ================= INFO ================= */
 
 .info-grid {
 
@@ -199,7 +212,7 @@ body {
     display: grid;
 
     grid-template-columns:
-        repeat(auto-fit, minmax(180px, 1fr));
+        repeat(auto-fit,minmax(180px,1fr));
 
     gap: 20px;
 }
@@ -208,7 +221,7 @@ body {
 
     background: #151515;
 
-    border: 1px solid #292929;
+    border: 1px solid #333;
 
     border-radius: 12px;
 
@@ -218,11 +231,14 @@ body {
 }
 
 .info-card h3 {
+
     color: #ffcc00;
+
     margin-bottom: 10px;
 }
 
 .info-card p {
+
     color: #aaa;
 }
 
@@ -231,14 +247,14 @@ body {
 
 .cast-container {
 
-    max-width: 1100px;
+    max-width: 1150px;
 
     margin: auto;
 
     display: grid;
 
     grid-template-columns:
-        repeat(auto-fit, minmax(230px, 1fr));
+        repeat(auto-fit,minmax(230px,1fr));
 
     gap: 25px;
 }
@@ -247,7 +263,7 @@ body {
 
     background: #111;
 
-    border: 1px solid #292929;
+    border: 1px solid #333;
 
     border-radius: 15px;
 
@@ -255,7 +271,9 @@ body {
 
     text-align: center;
 
-    transition: 0.4s;
+    transition: .4s;
+
+    min-height: 430px;
 }
 
 .actor:hover {
@@ -265,8 +283,11 @@ body {
     border-color: #ffcc00;
 
     box-shadow:
-        0 10px 35px rgba(255,204,0,0.2);
+        0 10px 35px rgba(255,204,0,.25);
 }
+
+
+/* IMPORTANT: CAST IMAGES */
 
 .actor img {
 
@@ -276,27 +297,37 @@ body {
 
     object-fit: cover;
 
+    object-position: center;
+
     display: block;
+
+    background: #222;
 }
 
 .actor-content {
-    padding: 20px;
+
+    padding: 18px;
 }
 
 .actor h3 {
+
     color: #ffcc00;
+
     font-size: 22px;
 }
 
 .actor p {
-    color: #999;
-    margin-top: 5px;
+
+    color: #aaa;
+
+    margin-top: 7px;
 }
 
 
 /* ================= GALLERY ================= */
 
 .gallery {
+
     background: #0b0b0b;
 }
 
@@ -309,41 +340,47 @@ body {
     display: grid;
 
     grid-template-columns:
-        repeat(auto-fit, minmax(250px, 1fr));
+        repeat(auto-fit,minmax(250px,1fr));
 
-    gap: 18px;
+    gap: 20px;
 }
 
 .gallery-card {
 
+    height: 280px;
+
     overflow: hidden;
 
-    border-radius: 12px;
+    border-radius: 15px;
 
-    border: 1px solid #292929;
+    border: 1px solid #333;
+
+    background: #111;
 }
 
 .gallery-card img {
 
     width: 100%;
 
-    height: 250px;
+    height: 100%;
 
     object-fit: cover;
 
     display: block;
 
-    transition: 0.5s;
+    transition: .5s;
 }
 
 .gallery-card:hover img {
+
     transform: scale(1.08);
 }
 
 
-/* ================= MY PROJECT PHOTO ================= */
+/* ================= MY PROJECT ================= */
 
 .project-section {
+
     background: #050505;
 }
 
@@ -362,7 +399,7 @@ body {
     border: 1px solid #333;
 
     box-shadow:
-        0 15px 50px rgba(0,0,0,0.6);
+        0 15px 50px rgba(0,0,0,.6);
 }
 
 .project-image {
@@ -378,16 +415,6 @@ body {
     border-radius: 12px;
 
     border: 2px solid #ffcc00;
-
-    transition: 0.5s;
-}
-
-.project-image:hover {
-
-    transform: scale(1.02);
-
-    box-shadow:
-        0 0 35px rgba(255,204,0,0.35);
 }
 
 .project-caption {
@@ -410,8 +437,7 @@ body {
 
     color: #aaa;
 
-    line-height: 1.7;
-
+    line-height: 1.8;
 }
 
 
@@ -427,7 +453,7 @@ body {
 
     background: #111;
 
-    border: 1px solid #292929;
+    border: 1px solid #333;
 
     border-radius: 15px;
 
@@ -435,11 +461,14 @@ body {
 }
 
 .review h2 {
+
     color: #ffcc00;
 }
 
 .review p {
+
     color: #aaa;
+
     margin-top: 15px;
 }
 
@@ -448,81 +477,75 @@ body {
 
 footer {
 
-    padding: 30px;
-
     text-align: center;
+
+    padding: 30px;
 
     background: #020202;
 
-    border-top: 1px solid #222;
-
     color: #777;
+
+    border-top: 1px solid #222;
 }
 
 footer span {
+
     color: #ffcc00;
 }
 
 
 /* ================= MOBILE ================= */
 
-@media(max-width: 700px) {
+@media(max-width:700px) {
 
     .navbar {
+
         flex-direction: column;
+
         gap: 15px;
     }
 
     .nav-links {
+
         flex-wrap: wrap;
+
         justify-content: center;
-        gap: 12px;
+
+        gap: 13px;
     }
 
     .hero {
+
         min-height: 75vh;
-        padding: 80px 6%;
+
+        padding: 70px 6%;
     }
 
     .hero h1 {
-        font-size: 55px;
-        letter-spacing: 4px;
+
+        font-size: 50px;
+
+        letter-spacing: 3px;
     }
 
     .hero h2 {
+
         font-size: 20px;
     }
 
     .section {
+
         padding: 60px 5%;
     }
 
     .section-title {
+
         font-size: 32px;
     }
 
     .actor img {
-        height: 350px;
-    }
 
-    .project-image {
-        max-height: 500px;
-    }
-
-}
-
-@media(max-width: 450px) {
-
-    .logo {
-        font-size: 22px;
-    }
-
-    .nav-links a {
-        font-size: 13px;
-    }
-
-    .hero h1 {
-        font-size: 45px;
+        height: 360px;
     }
 
 }
@@ -580,9 +603,7 @@ footer span {
 
     <div class="hero-content">
 
-        <h1>
-            DRISHYAM
-        </h1>
+        <h1>DRISHYAM</h1>
 
         <h2>
             The Story That Changed Everything
@@ -615,17 +636,14 @@ footer span {
         About The Movie
     </h2>
 
-    <div class="about-container">
+    <p class="about-text">
 
-        <p>
-            Drishyam is a Hindi crime thriller known for
-            its suspenseful story and strong performances.
-            The story follows Vijay Salgaonkar and his
-            family as they face an extraordinary situation
-            and attempt to protect their family.
-        </p>
+        Drishyam is a Hindi crime thriller directed by
+        Nishikant Kamat. The story follows Vijay Salgaonkar
+        and his family as they face a serious situation and
+        try to protect their family.
 
-    </div>
+    </p>
 
 
     <div class="info-grid">
@@ -682,68 +700,96 @@ footer span {
     <div class="cast-container">
 
 
+        <!-- AJAY -->
+
         <div class="actor">
 
             <img
-                src="https://upload.wikimedia.org/wikipedia/commons/6/6e/Ajay_Devgn_at_the_trailer_launch_of_%27Drishyam%27.jpg"
-                alt="Ajay Devgn">
+                src="https://upload.wikimedia.org/wikipedia/commons/b/b3/Drishyam_Actor_Ajay_Devgn_with_suresh_sharma.JPG"
+                alt="Ajay Devgn"
+                loading="lazy">
 
             <div class="actor-content">
 
-                <h3>Ajay Devgn</h3>
+                <h3>
+                    Ajay Devgn
+                </h3>
 
-                <p>Vijay Salgaonkar</p>
+                <p>
+                    Vijay Salgaonkar
+                </p>
 
             </div>
 
         </div>
 
 
+        <!-- SHRIYA -->
+
         <div class="actor">
 
             <img
-                src="https://upload.wikimedia.org/wikipedia/commons/6/6c/Shriya_Saran_at_the_screening_of_Tadap.jpg"
-                alt="Shriya Saran">
+                src="https://upload.wikimedia.org/wikipedia/commons/7/72/Shriya_Saran.jpg"
+                alt="Shriya Saran"
+                loading="lazy">
 
             <div class="actor-content">
 
-                <h3>Shriya Saran</h3>
+                <h3>
+                    Shriya Saran
+                </h3>
 
-                <p>Nandini Salgaonkar</p>
+                <p>
+                    Nandini Salgaonkar
+                </p>
 
             </div>
 
         </div>
 
 
+        <!-- TABU -->
+
         <div class="actor">
 
             <img
-                src="https://upload.wikimedia.org/wikipedia/commons/8/8e/Tabu_at_the_screening_of_Missing.jpg"
-                alt="Tabu">
+                src="https://upload.wikimedia.org/wikipedia/commons/f/f3/Tabu_in_2024.jpg"
+                alt="Tabu"
+                loading="lazy">
 
             <div class="actor-content">
 
-                <h3>Tabu</h3>
+                <h3>
+                    Tabu
+                </h3>
 
-                <p>Meera Deshmukh</p>
+                <p>
+                    Meera Deshmukh
+                </p>
 
             </div>
 
         </div>
 
 
+        <!-- ISHITA -->
+
         <div class="actor">
 
             <img
-                src="https://upload.wikimedia.org/wikipedia/commons/7/7e/Ishita_Dutta_at_the_screening_of_Drusshyam.jpg"
-                alt="Ishita Dutta">
+                src="https://upload.wikimedia.org/wikipedia/commons/1/14/Ishita_Dutta_at_the_meet_of_film_%27Drishyam%27_at_PVR_Juhu.jpg"
+                alt="Ishita Dutta"
+                loading="lazy">
 
             <div class="actor-content">
 
-                <h3>Ishita Dutta</h3>
+                <h3>
+                    Ishita Dutta
+                </h3>
 
-                <p>Anju Salgaonkar</p>
+                <p>
+                    Anju Salgaonkar
+                </p>
 
             </div>
 
@@ -770,8 +816,8 @@ footer span {
         <div class="gallery-card">
 
             <img
-                src="https://images.unsplash.com/photo-1485846234645-a62644f84728?auto=format&fit=crop&w=1000&q=80"
-                alt="Movie Camera"
+                src="https://upload.wikimedia.org/wikipedia/commons/0/0f/Drishyam_star_cast_Ajay_Devgn%2C_Shriya_Saran_and_Tabu_with_suresh_sharma.jpg"
+                alt="Drishyam Star Cast"
                 loading="lazy">
 
         </div>
@@ -780,8 +826,8 @@ footer span {
         <div class="gallery-card">
 
             <img
-                src="https://images.unsplash.com/photo-1517604931442-7e0c8ed2963c?auto=format&fit=crop&w=1000&q=80"
-                alt="Cinema"
+                src="https://upload.wikimedia.org/wikipedia/commons/b/b3/Drishyam_Actor_Ajay_Devgn_with_suresh_sharma.JPG"
+                alt="Ajay Devgn Drishyam"
                 loading="lazy">
 
         </div>
@@ -790,8 +836,8 @@ footer span {
         <div class="gallery-card">
 
             <img
-                src="https://images.unsplash.com/photo-1489599849927-2ee91cede3ba?auto=format&fit=crop&w=1000&q=80"
-                alt="Cinema Screen"
+                src="https://upload.wikimedia.org/wikipedia/commons/1/13/Drishyam_actres_Tabu_with_suresh_sharma.JPG"
+                alt="Tabu Drishyam"
                 loading="lazy">
 
         </div>
@@ -800,8 +846,8 @@ footer span {
         <div class="gallery-card">
 
             <img
-                src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1000&q=80"
-                alt="Movie Scene"
+                src="https://upload.wikimedia.org/wikipedia/commons/1/14/Ishita_Dutta_at_the_meet_of_film_%27Drishyam%27_at_PVR_Juhu.jpg"
+                alt="Ishita Dutta Drishyam"
                 loading="lazy">
 
         </div>
@@ -812,20 +858,23 @@ footer span {
 </section>
 
 
-<!-- ================= YOUR UPLOADED PHOTO ================= -->
+<!-- ================= YOUR LAPTOP PHOTO ================= -->
 
-<section class="section project-section" id="project">
+<section class="section project-section"
+         id="project">
 
     <h2 class="section-title">
+
         💻 My Drishyam Project
+
     </h2>
 
 
     <div class="project-container">
 
         <img
-            src="${pageContext.request.contextPath}/images/drishyam-laptop.jpg"
-            alt="Drishyam Website Project on Laptop"
+            src="${pageContext.request.contextPath}/images/my-project.jpg"
+            alt="My Drishyam Website Project"
             class="project-image">
 
 
@@ -836,9 +885,11 @@ footer span {
             </h3>
 
             <p>
-                This is my Drishyam movie website project,
+
+                Dynamic and responsive movie website
                 developed using JSP, HTML and CSS and
-                deployed on Apache Tomcat using Jenkins.
+                deployed on Apache Tomcat through Jenkins.
+
             </p>
 
         </div>
@@ -850,14 +901,15 @@ footer span {
 
 <!-- ================= REVIEW ================= -->
 
-<section class="review" id="review">
+<section class="review"
+         id="review">
 
     <h2>
         📰 Movie Review
     </h2>
 
     <p>
-        Read more about the movie and its review.
+        Read the movie review for more information.
     </p>
 
     <a
@@ -885,7 +937,7 @@ footer span {
             Drishyam Movie Website
         </span>
 
-        | Jenkins + Tomcat Project
+        | Jenkins + Tomcat
 
     </p>
 
