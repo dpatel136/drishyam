@@ -1,164 +1,305 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Drishyam | Movie Experience</title>
+    <meta charset="UTF-8">
 
-<style>
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
 
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-}
+    <title>Drishyam: The Conclusion</title>
 
-html{
-    scroll-behavior:smooth;
-}
 
-body{
-    font-family:'Inter',sans-serif;
-    background:#080808;
-    color:#fff;
-    overflow-x:hidden;
-}
+    <style>
 
-body.modal-open{
-    overflow:hidden;
-}
+        * {
+            box-sizing: border-box;
+        }
 
-/* ================= NAVBAR ================= */
+        html {
+            scroll-behavior: smooth;
+        }
 
-.navbar{
-    position:fixed;
-    top:0;
-    left:0;
-    width:100%;
-    z-index:1000;
-    padding:18px 6%;
-    display:flex;
-    align-items:center;
-    justify-content:space-between;
-    transition:.4s;
-}
+        body {
 
-.navbar.scrolled{
-    background:rgba(5,5,5,.95);
-    backdrop-filter:blur(15px);
-    padding:13px 6%;
-    box-shadow:0 5px 25px rgba(0,0,0,.5);
-}
+            margin: 0;
+            padding: 0;
 
-.logo{
-    font-size:28px;
-    font-weight:800;
-    letter-spacing:4px;
-    color:#e50914;
-}
+            background:
+                radial-gradient(
+                    circle at top,
+                    #252000 0%,
+                    #080808 35%,
+                    #030303 100%
+                );
 
-.nav-links{
-    display:flex;
-    list-style:none;
-    gap:30px;
-}
+            color: white;
 
-.nav-links a{
-    color:#fff;
-    text-decoration:none;
-    font-size:14px;
-    font-weight:600;
-    transition:.3s;
-}
+            font-family:
+                Arial,
+                Helvetica,
+                sans-serif;
 
-.nav-links a:hover{
-    color:#e50914;
-}
+        }
 
-.menu-btn{
-    display:none;
-    border:0;
-    background:none;
-    color:white;
-    font-size:28px;
-    cursor:pointer;
-}
 
-/* ================= HERO ================= */
+        /* ================= NAVBAR ================= */
 
-.hero{
-    min-height:100vh;
-    position:relative;
-    display:flex;
-    align-items:center;
-    padding:120px 7%;
-    background:
-        linear-gradient(90deg,#050505 0%,rgba(5,5,5,.92) 25%,rgba(5,5,5,.55) 60%,rgba(5,5,5,.2)),
-        url("https://images.unsplash.com/photo-1489599849927-2ee91cede3ba?auto=format&fit=crop&w=2200&q=90");
-    background-size:cover;
-    background-position:center;
-}
+        .navbar {
 
-.hero-content{
-    max-width:650px;
-    animation:heroIn 1.2s ease;
-}
+            position: sticky;
+            top: 0;
 
-@keyframes heroIn{
-    from{
-        opacity:0;
-        transform:translateY(40px);
-    }
-    to{
-        opacity:1;
-        transform:translateY(0);
-    }
-}
+            z-index: 1000;
 
-.badge{
-    display:inline-block;
-    padding:8px 14px;
-    background:#e50914;
-    border-radius:4px;
-    font-size:12px;
-    font-weight:700;
-    margin-bottom:20px;
-}
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
 
-.hero h1{
-    font-size:clamp(55px,10vw,120px);
-    letter-spacing:8px;
-    line-height:.95;
-    margin-bottom:25px;
-}
+            padding: 18px 6%;
 
-.hero h1 span{
-    color:#e50914;
-}
+            background: rgba(5,5,5,0.95);
 
-.hero-info{
-    display:flex;
-    gap:15px;
-    flex-wrap:wrap;
-    color:#ddd;
-    margin-bottom:22px;
-    font-size:14px;
-}
+            border-bottom:
+                1px solid rgba(255,204,0,0.25);
 
-.hero p{
-    color:#ccc;
-    line-height:1.8;
-    margin-bottom:30px;
-}
+            backdrop-filter: blur(10px);
 
-.hero-buttons{
-    display:flex;
-    gap:15px;
-}
+        }
 
-.btn{
-    border:0;
-    padding:14px 24px;
-    border-radius:5px
+
+        .logo {
+
+            color: #ffcc00;
+
+            font-size: 25px;
+
+            font-weight: bold;
+
+            letter-spacing: 3px;
+
+        }
+
+
+        .navbar a {
+
+            color: #ddd;
+
+            text-decoration: none;
+
+            margin-left: 25px;
+
+            transition: 0.3s;
+
+        }
+
+
+        .navbar a:hover {
+
+            color: #ffcc00;
+
+        }
+
+
+        /* ================= HEADER ================= */
+
+        .header {
+
+            text-align: center;
+
+            padding: 90px 20px 60px;
+
+            background:
+
+                linear-gradient(
+                    rgba(0,0,0,0.55),
+                    rgba(0,0,0,0.9)
+                ),
+
+                url("https://upload.wikimedia.org/wikipedia/commons/thumb/0/0f/Drishyam_star_cast_Ajay_Devgn%2C_Shriya_Saran_and_Tabu_with_suresh_sharma.jpg/1280px-Drishyam_star_cast_Ajay_Devgn%2C_Shriya_Saran_and_Tabu_with_suresh_sharma.jpg");
+
+            background-size: cover;
+
+            background-position: center;
+
+            background-attachment: fixed;
+
+        }
+
+
+        .header h1 {
+
+            margin: 0;
+
+            font-size:
+                clamp(38px, 7vw, 70px);
+
+            color: #ffcc00;
+
+            text-shadow:
+                0 0 10px #ff9900,
+                0 0 30px rgba(255,153,0,0.5);
+
+        }
+
+
+        .header p {
+
+            color: #ddd;
+
+            font-size: 20px;
+
+            letter-spacing: 3px;
+
+        }
+
+
+        /* ================= MAIN IMAGE ================= */
+
+        .main-section {
+
+            text-align: center;
+
+            padding: 50px 20px;
+
+        }
+
+
+        .main-photo {
+
+            width: 900px;
+
+            max-width: 100%;
+
+            max-height: 550px;
+
+            object-fit: cover;
+
+            border-radius: 18px;
+
+            border:
+                3px solid #ffcc00;
+
+            box-shadow:
+                0 0 30px rgba(255,204,0,0.35);
+
+            transition: 0.5s;
+
+        }
+
+
+        .main-photo:hover {
+
+            transform: scale(1.02);
+
+            box-shadow:
+                0 0 45px rgba(255,204,0,0.55);
+
+        }
+
+
+        /* ================= CAST ================= */
+
+        .cast-section {
+
+            text-align: center;
+
+            padding: 60px 20px;
+
+        }
+
+
+        .section-title {
+
+            color: #ffcc00;
+
+            font-size: 40px;
+
+            margin-bottom: 35px;
+
+        }
+
+
+        .cast-container {
+
+            display: grid;
+
+            grid-template-columns:
+                repeat(auto-fit, minmax(230px, 1fr));
+
+            max-width: 1100px;
+
+            margin: auto;
+
+            gap: 30px;
+
+        }
+
+
+        .actor {
+
+            background:
+
+                linear-gradient(
+                    145deg,
+                    #1c1c1c,
+                    #0e0e0e
+                );
+
+            padding: 15px;
+
+            border-radius: 18px;
+
+            border:
+                1px solid #333;
+
+            box-shadow:
+                0 0 20px rgba(255,204,0,0.08);
+
+            transition:
+                transform 0.4s,
+                box-shadow 0.4s,
+                border 0.4s;
+
+        }
+
+
+        .actor:hover {
+
+            transform:
+                translateY(-12px);
+
+            border-color:
+                #ffcc00;
+
+            box-shadow:
+                0 15px 40px
+                rgba(255,204,0,0.2);
+
+        }
+
+
+        .actor img {
+
+            width: 100%;
+
+            height: 330px;
+
+            object-fit: cover;
+
+            border-radius: 12px;
+
+            display: block;
+
+        }
+
+
+        .actor h3 {
+
+            color: #ffcc00;
+
+            font-size: 23px;
+
+            margin:
+                18
