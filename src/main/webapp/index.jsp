@@ -1,42 +1,46 @@
 <%@ page language="java"
-    contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
-
-<%
-/* EXACT Drishyam image embedded inside this JSP */
-String drishyamPoster =
-    "data:image/png;base64,[YAHAN AAPKI EXACT IMAGE KA BASE64 HAI]";
-%>
+         contentType="text/html; charset=UTF-8"
+         pageEncoding="UTF-8"%>
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
 
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Drishyam | The Conclusion</title>
+<meta name="viewport"
+      content="width=device-width, initial-scale=1.0">
+
+<title>Drishyam | Movie Website</title>
 
 <style>
+
+/* ================= RESET ================= */
 
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+}
+
+html {
     scroll-behavior: smooth;
 }
 
 body {
-    font-family: Arial, Helvetica, sans-serif;
     background: #050505;
     color: white;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
-/* NAVBAR */
+
+/* ================= NAVBAR ================= */
+
 .navbar {
     position: sticky;
     top: 0;
-    z-index: 1000;
+    z-index: 999;
 
     display: flex;
     justify-content: space-between;
@@ -44,345 +48,350 @@ body {
 
     padding: 18px 7%;
 
-    background: rgba(5,5,15,0.96);
-    backdrop-filter: blur(10px);
+    background: rgba(0,0,0,0.96);
 
-    border-bottom: 1px solid rgba(255,165,0,0.2);
+    border-bottom: 1px solid #333;
 }
 
 .logo {
-    color: #ff9d00;
+    color: #ffcc00;
     font-size: 28px;
-    font-weight: 900;
-    letter-spacing: 3px;
+    font-weight: bold;
+    letter-spacing: 4px;
 }
 
 .nav-links {
     display: flex;
-    gap: 25px;
     list-style: none;
+    gap: 25px;
 }
 
 .nav-links a {
     color: white;
     text-decoration: none;
-    font-weight: 600;
+    transition: 0.3s;
 }
 
 .nav-links a:hover {
-    color: #ffae00;
+    color: #ffcc00;
 }
 
-/* EXACT IMAGE AT START */
-.hero-photo {
-    width: 100%;
-    background: #000;
-    overflow: hidden;
+
+/* ================= HERO ================= */
+
+.hero {
+
+    min-height: 90vh;
+
+    display: flex;
+    align-items: center;
+
+    padding: 100px 7%;
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(0,0,0,0.95),
+            rgba(0,0,0,0.65),
+            rgba(0,0,0,0.25)
+        ),
+        url("https://images.unsplash.com/photo-1485846234645-a62644f84728?auto=format&fit=crop&w=2000&q=80");
+
+    background-size: cover;
+    background-position: center;
 }
 
-.hero-photo img {
-    display: block;
-    width: 100%;
-    height: auto;
-    max-height: 720px;
-    object-fit: cover;
-}
-
-/* HERO TEXT */
 .hero-content {
-    padding: 55px 8%;
-    text-align: center;
-    background: linear-gradient(180deg, #090909, #050505);
+    max-width: 650px;
 }
 
-.hero-content h1 {
-    font-size: clamp(45px, 7vw, 90px);
-    color: #ffae00;
-    line-height: 1;
-    letter-spacing: 5px;
+.hero h1 {
+    font-size: clamp(55px, 9vw, 100px);
+    color: #ffcc00;
+    letter-spacing: 8px;
+    text-shadow: 0 0 30px rgba(255,204,0,0.5);
 }
 
-.hero-content h2 {
-    margin-top: 18px;
-    font-size: 34px;
+.hero h2 {
+    margin-top: 20px;
+    font-size: 25px;
 }
 
-.hero-content p {
-    margin: 18px auto 0;
-    max-width: 700px;
+.hero p {
+    margin-top: 20px;
     color: #ccc;
     font-size: 17px;
-    line-height: 1.7;
+    line-height: 1.8;
 }
 
-.buttons {
-    margin-top: 28px;
-    display: flex;
-    justify-content: center;
-    gap: 15px;
-}
-
-.btn {
+.button {
     display: inline-block;
-    padding: 14px 28px;
-    background: #ffae00;
-    color: #111;
+
+    margin-top: 25px;
+    margin-right: 10px;
+
+    padding: 14px 25px;
+
+    background: #ffcc00;
+    color: #050505;
+
     text-decoration: none;
     font-weight: bold;
-    border-radius: 8px;
+
+    border-radius: 5px;
+
+    transition: 0.3s;
 }
 
-.btn:hover {
-    background: #ffc14d;
+.button:hover {
+    background: white;
+    transform: translateY(-3px);
 }
 
-/* SECTIONS */
+
+/* ================= COMMON ================= */
+
 .section {
-    padding: 85px 8%;
+    padding: 80px 7%;
 }
 
 .section-title {
     text-align: center;
-    font-size: 38px;
-    margin-bottom: 50px;
-    color: #ffae00;
+
+    color: #ffcc00;
+
+    font-size: 40px;
+
+    margin-bottom: 45px;
 }
 
-/* ABOUT */
+
+/* ================= ABOUT ================= */
+
 .about {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 50px;
-    align-items: center;
+    background: #0b0b0b;
 }
 
-.about-text h2 {
-    font-size: 38px;
-    color: #ffae00;
-    margin-bottom: 20px;
-}
+.about-container {
+    max-width: 1000px;
+    margin: auto;
 
-.about-text p {
-    color: #ccc;
-    font-size: 17px;
-    line-height: 1.8;
-    margin-bottom: 15px;
-}
-
-.poster-container {
     text-align: center;
 }
 
-.poster-container img {
+.about-container p {
+    color: #bbb;
+
+    font-size: 17px;
+
+    line-height: 1.9;
+}
+
+
+/* ================= MOVIE DETAILS ================= */
+
+.info-grid {
+
+    max-width: 1000px;
+
+    margin: 40px auto 0;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(auto-fit, minmax(180px, 1fr));
+
+    gap: 20px;
+}
+
+.info-card {
+
+    background: #151515;
+
+    border: 1px solid #292929;
+
+    border-radius: 12px;
+
+    padding: 25px;
+
+    text-align: center;
+}
+
+.info-card h3 {
+    color: #ffcc00;
+    margin-bottom: 10px;
+}
+
+.info-card p {
+    color: #aaa;
+}
+
+
+/* ================= STAR CAST ================= */
+
+.cast-container {
+
+    max-width: 1100px;
+
+    margin: auto;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(auto-fit, minmax(230px, 1fr));
+
+    gap: 25px;
+}
+
+.actor {
+
+    background: #111;
+
+    border: 1px solid #292929;
+
+    border-radius: 15px;
+
+    overflow: hidden;
+
+    text-align: center;
+
+    transition: 0.4s;
+}
+
+.actor:hover {
+
+    transform: translateY(-10px);
+
+    border-color: #ffcc00;
+
+    box-shadow:
+        0 10px 35px rgba(255,204,0,0.2);
+}
+
+.actor img {
+
     width: 100%;
-    max-width: 650px;
+
+    height: 330px;
+
+    object-fit: cover;
+
+    display: block;
+}
+
+.actor-content {
+    padding: 20px;
+}
+
+.actor h3 {
+    color: #ffcc00;
+    font-size: 22px;
+}
+
+.actor p {
+    color: #999;
+    margin-top: 5px;
+}
+
+
+/* ================= GALLERY ================= */
+
+.gallery {
+    background: #0b0b0b;
+}
+
+.gallery-grid {
+
+    max-width: 1200px;
+
+    margin: auto;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(auto-fit, minmax(250px, 1fr));
+
+    gap: 18px;
+}
+
+.gallery-card {
+
+    overflow: hidden;
+
+    border-radius: 12px;
+
+    border: 1px solid #292929;
+}
+
+.gallery-card img {
+
+    width: 100%;
+
+    height: 250px;
+
+    object-fit: cover;
+
+    display: block;
+
+    transition: 0.5s;
+}
+
+.gallery-card:hover img {
+    transform: scale(1.08);
+}
+
+
+/* ================= MY PROJECT PHOTO ================= */
+
+.project-section {
+    background: #050505;
+}
+
+.project-container {
+
+    max-width: 1050px;
+
+    margin: auto;
+
+    background: #111;
+
+    padding: 20px;
+
     border-radius: 18px;
-    box-shadow: 0 20px 50px rgba(0,0,0,0.7);
+
+    border: 1px solid #333;
+
+    box-shadow:
+        0 15px 50px rgba(0,0,0,0.6);
 }
 
-/* MOBILE */
-@media(max-width:768px) {
+.project-image {
 
-    .navbar {
-        flex-direction: column;
-        gap: 15px;
-    }
+    width: 100%;
 
-    .nav-links {
-        gap: 12px;
-        flex-wrap: wrap;
-        justify-content: center;
-    }
+    max-height: 650px;
 
-    .hero-photo img {
-        width: 100%;
-        height: auto;
-    }
+    object-fit: cover;
 
-    .about {
-        grid-template-columns: 1fr;
-    }
+    display: block;
 
-    .hero-content h1 {
-        font-size: 50px;
-    }
+    border-radius: 12px;
 
+    border: 2px solid #ffcc00;
+
+    transition: 0.5s;
 }
 
-</style>
-</head>
+.project-image:hover {
 
-<body>
+    transform: scale(1.02);
 
-<!-- NAVBAR -->
+    box-shadow:
+        0 0 35px rgba(255,204,0,0.35);
+}
 
-<nav class="navbar">
+.project-caption {
 
-    <div class="logo">
-        DRISHYAM
-    </div>
+    text-align: center;
 
-    <ul class="nav-links">
-
-        <li><a href="#home">Home</a></li>
-
-        <li><a href="#about">About</a></li>
-
-        <li><a href="#cast">Cast</a></li>
-
-        <li><a href="#gallery">Gallery</a></li>
-
-        <li><a href="#project">My Project</a></li>
-
-        <li><a href="#review">Review</a></li>
-
-    </ul>
-
-</nav>
-
-
-<!-- EXACT UPLOADED PHOTOGRAPHY IMAGE -->
-
-<section class="hero-photo" id="home">
-
-    <img
-        src="<%= drishyamPoster %>"
-        alt="Drishyam The Conclusion">
-
-</section>
-
-
-<!-- HERO TEXT -->
-
-<section class="hero-content">
-
-    <h1>DRISHYAM</h1>
-
-    <h2>The Conclusion</h2>
-
-    <p>
-        The final chapter of the Drishyam story.
-        A family, a secret and a battle of minds.
-    </p>
-
-    <div class="buttons">
-
-        <a href="#about" class="btn">
-            Explore Movie
-        </a>
-
-        <a href="#gallery" class="btn">
-            View Gallery
-        </a>
-
-    </div>
-
-</section>
-
-
-<!-- ABOUT -->
-
-<section class="section" id="about">
-
-    <h2 class="section-title">
-        About The Movie
-    </h2>
-
-    <div class="about">
-
-        <div class="about-text">
-
-            <h2>
-                Drishyam The Conclusion
-            </h2>
-
-            <p>
-                Drishyam is a suspense thriller movie website
-                created using JSP, HTML and CSS.
-            </p>
-
-            <p>
-                The website showcases the movie story,
-                star cast, gallery and project information.
-            </p>
-
-        </div>
-
-        <div class="poster-container">
-
-            <img
-                src="<%= drishyamPoster %>"
-                alt="Drishyam The Conclusion Poster">
-
-        </div>
-
-    </div>
-
-</section>
-
-
-<!-- GALLERY -->
-
-<section class="section" id="gallery">
-
-    <h2 class="section-title">
-        Movie Gallery
-    </h2>
-
-    <div class="poster-container">
-
-        <img
-            src="<%= drishyamPoster %>"
-            alt="Drishyam The Conclusion Gallery">
-
-    </div>
-
-</section>
-
-
-<!-- CAST -->
-
-<section class="section" id="cast">
-
-    <h2 class="section-title">
-        Star Cast
-    </h2>
-
-    <p style="text-align:center;color:#ccc;">
-        Drishyam The Conclusion
-    </p>
-
-</section>
-
-
-<!-- PROJECT -->
-
-<section class="section" id="project">
-
-    <h2 class="section-title">
-        My Project
-    </h2>
-
-    <p style="text-align:center;color:#ccc;">
-        Drishyam Movie Website
-    </p>
-
-</section>
-
-
-<!-- REVIEW -->
-
-<section class="section" id="review">
-
-    <h2 class="section-title">
-        Review
-    </h2>
-
-    <p style="text-align:center;color:#ccc;">
-        A suspenseful movie experience.
-    </p>
-
-</section>
-
-</body>
-</html>
+    padding: 25px 10px
