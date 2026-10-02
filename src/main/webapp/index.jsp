@@ -7,831 +7,391 @@
 
 <head>
 
-    <meta charset="UTF-8">
+<meta charset="UTF-8">
 
-    <meta name="viewport"
-          content="width=device-width, initial-scale=1.0">
+<meta name="viewport"
+      content="width=device-width, initial-scale=1.0">
 
-    <title>Drishyam | Movie Website</title>
+<title>Drishyam | Movie Website</title>
 
-    <style>
+<style>
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+/* ================= RESET ================= */
 
-        html {
-            scroll-behavior: smooth;
-        }
-
-        body {
-            background: #050505;
-            color: white;
-            font-family: Arial, Helvetica, sans-serif;
-            line-height: 1.6;
-        }
-
-        /* ================= NAVBAR ================= */
-
-        .navbar {
-            position: sticky;
-            top: 0;
-            z-index: 999;
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
-            width: 100%;
-
-            padding: 18px 7%;
+html {
+    scroll-behavior: smooth;
+}
 
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
+body {
+    background: #050505;
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+}
 
-            background: rgba(0, 0, 0, 0.95);
 
-            border-bottom: 1px solid #292929;
-        }
+/* ================= NAVBAR ================= */
 
-        .logo {
-            color: #ffcc00;
-            font-size: 28px;
-            font-weight: bold;
-            letter-spacing: 4px;
-        }
+.navbar {
+    position: sticky;
+    top: 0;
+    z-index: 999;
 
-        .nav-links {
-            display: flex;
-            gap: 25px;
-            list-style: none;
-        }
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 
-        .nav-links a {
-            color: white;
-            text-decoration: none;
-            font-size: 15px;
-            transition: 0.3s;
-        }
+    padding: 18px 7%;
 
-        .nav-links a:hover {
-            color: #ffcc00;
-        }
-
-        /* ================= HERO ================= */
+    background: rgba(0,0,0,0.96);
 
-        .hero {
-
-            min-height: 90vh;
-
-            display: flex;
-            align-items: center;
+    border-bottom: 1px solid #333;
+}
 
-            padding: 100px 7%;
+.logo {
+    color: #ffcc00;
+    font-size: 28px;
+    font-weight: bold;
+    letter-spacing: 4px;
+}
 
-            background:
-                linear-gradient(
-                    90deg,
-                    rgba(0,0,0,0.95),
-                    rgba(0,0,0,0.65),
-                    rgba(0,0,0,0.25)
-                ),
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 25px;
+}
 
-                url("https://images.unsplash.com/photo-1485846234645-a62644f84728?auto=format&fit=crop&w=2000&q=80");
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    transition: 0.3s;
+}
 
-            background-size: cover;
-            background-position: center;
-        }
+.nav-links a:hover {
+    color: #ffcc00;
+}
 
-        .hero-content {
-            max-width: 650px;
-        }
 
-        .hero h1 {
-            font-size: clamp(55px, 9vw, 100px);
-            color: #ffcc00;
-            letter-spacing: 8px;
-            line-height: 1;
-            text-shadow: 0 0 25px rgba(255,204,0,0.5);
-        }
-
-        .hero h2 {
-            margin-top: 20px;
-            color: white;
-            font-size: 25px;
-        }
+/* ================= HERO ================= */
 
-        .hero p {
-            margin-top: 20px;
-            color: #ccc;
-            font-size: 17px;
-            max-width: 600px;
-        }
+.hero {
 
-        .hero-buttons {
-            margin-top: 30px;
-        }
+    min-height: 90vh;
 
-        .button {
-            display: inline-block;
-            padding: 14px 25px;
-            margin-right: 10px;
+    display: flex;
+    align-items: center;
 
-            background: #ffcc00;
-            color: #050505;
+    padding: 100px 7%;
 
-            text-decoration: none;
-            font-weight: bold;
+    background:
+        linear-gradient(
+            90deg,
+            rgba(0,0,0,0.95),
+            rgba(0,0,0,0.65),
+            rgba(0,0,0,0.25)
+        ),
+        url("https://images.unsplash.com/photo-1485846234645-a62644f84728?auto=format&fit=crop&w=2000&q=80");
 
-            border-radius: 5px;
+    background-size: cover;
+    background-position: center;
+}
 
-            transition: 0.3s;
-        }
+.hero-content {
+    max-width: 650px;
+}
 
-        .button:hover {
-            transform: translateY(-3px);
-            background: white;
-        }
+.hero h1 {
+    font-size: clamp(55px, 9vw, 100px);
+    color: #ffcc00;
+    letter-spacing: 8px;
+    text-shadow: 0 0 30px rgba(255,204,0,0.5);
+}
 
-        /* ================= COMMON ================= */
+.hero h2 {
+    margin-top: 20px;
+    font-size: 25px;
+}
 
-        .section {
-            padding: 80px 7%;
-        }
+.hero p {
+    margin-top: 20px;
+    color: #ccc;
+    font-size: 17px;
+    line-height: 1.8;
+}
 
-        .section-title {
-            text-align: center;
-            font-size: 40px;
-            margin-bottom: 45px;
-            color: #ffcc00;
-        }
+.button {
+    display: inline-block;
 
-        /* ================= ABOUT ================= */
+    margin-top: 25px;
+    margin-right: 10px;
 
-        .about {
-            background: #0c0c0c;
-        }
+    padding: 14px 25px;
 
-        .about-container {
-            max-width: 1000px;
-            margin: auto;
-            text-align: center;
-        }
+    background: #ffcc00;
+    color: #050505;
 
-        .about-container p {
-            color: #bbb;
-            font-size: 17px;
-            line-height: 1.9;
-        }
+    text-decoration: none;
+    font-weight: bold;
 
-        /* ================= MOVIE INFO ================= */
+    border-radius: 5px;
 
-        .info-grid {
+    transition: 0.3s;
+}
 
-            max-width: 1000px;
+.button:hover {
+    background: white;
+    transform: translateY(-3px);
+}
 
-            margin: 40px auto 0;
 
-            display: grid;
+/* ================= COMMON ================= */
 
-            grid-template-columns:
-                repeat(auto-fit, minmax(180px, 1fr));
+.section {
+    padding: 80px 7%;
+}
 
-            gap: 20px;
-        }
+.section-title {
+    text-align: center;
 
-        .info-card {
-            background: #151515;
-            border: 1px solid #292929;
-            border-radius: 10px;
-            padding: 25px;
-            text-align: center;
-        }
+    color: #ffcc00;
 
-        .info-card h3 {
-            color: #ffcc00;
-            margin-bottom: 8px;
-        }
+    font-size: 40px;
 
-        .info-card p {
-            color: #aaa;
-        }
+    margin-bottom: 45px;
+}
 
-        /* ================= CAST ================= */
 
-        .cast-container {
+/* ================= ABOUT ================= */
 
-            max-width: 1100px;
+.about {
+    background: #0b0b0b;
+}
 
-            margin: auto;
+.about-container {
+    max-width: 1000px;
+    margin: auto;
 
-            display: grid;
+    text-align: center;
+}
 
-            grid-template-columns:
-                repeat(auto-fit, minmax(230px, 1fr));
+.about-container p {
+    color: #bbb;
 
-            gap: 25px;
-        }
+    font-size: 17px;
 
-        .actor {
+    line-height: 1.9;
+}
 
-            background: #111;
 
-            border: 1px solid #292929;
+/* ================= MOVIE DETAILS ================= */
 
-            border-radius: 15px;
+.info-grid {
 
-            overflow: hidden;
+    max-width: 1000px;
 
-            text-align: center;
+    margin: 40px auto 0;
 
-            transition: 0.4s;
-        }
+    display: grid;
 
-        .actor:hover {
+    grid-template-columns:
+        repeat(auto-fit, minmax(180px, 1fr));
 
-            transform: translateY(-10px);
+    gap: 20px;
+}
 
-            border-color: #ffcc00;
+.info-card {
 
-            box-shadow:
-                0 10px 35px rgba(255,204,0,0.15);
-        }
+    background: #151515;
 
-        .actor img {
+    border: 1px solid #292929;
 
-            width: 100%;
+    border-radius: 12px;
 
-            height: 330px;
+    padding: 25px;
 
-            object-fit: cover;
+    text-align: center;
+}
 
-            display: block;
-        }
+.info-card h3 {
+    color: #ffcc00;
+    margin-bottom: 10px;
+}
 
-        .actor-content {
-            padding: 20px;
-        }
+.info-card p {
+    color: #aaa;
+}
 
-        .actor h3 {
-            color: #ffcc00;
-            font-size: 22px;
-        }
 
-        .actor p {
-            color: #999;
-            margin-top: 5px;
-        }
+/* ================= STAR CAST ================= */
 
-        /* ================= GALLERY ================= */
+.cast-container {
 
-        .gallery {
-            background: #0b0b0b;
-        }
+    max-width: 1100px;
 
-        .gallery-grid {
+    margin: auto;
 
-            max-width: 1200px;
+    display: grid;
 
-            margin: auto;
+    grid-template-columns:
+        repeat(auto-fit, minmax(230px, 1fr));
 
-            display: grid;
+    gap: 25px;
+}
 
-            grid-template-columns:
-                repeat(auto-fit, minmax(250px, 1fr));
+.actor {
 
-            gap: 18px;
-        }
+    background: #111;
 
-        .gallery-card {
-            overflow: hidden;
-            border-radius: 12px;
-            border: 1px solid #292929;
-        }
+    border: 1px solid #292929;
 
-        .gallery-card img {
+    border-radius: 15px;
 
-            width: 100%;
+    overflow: hidden;
 
-            height: 250px;
+    text-align: center;
 
-            object-fit: cover;
+    transition: 0.4s;
+}
 
-            display: block;
+.actor:hover {
 
-            transition: 0.5s;
-        }
+    transform: translateY(-10px);
 
-        .gallery-card:hover img {
-            transform: scale(1.08);
-        }
+    border-color: #ffcc00;
 
-        /* ================= REVIEW ================= */
+    box-shadow:
+        0 10px 35px rgba(255,204,0,0.2);
+}
 
-        .review {
+.actor img {
 
-            max-width: 1000px;
+    width: 100%;
 
-            margin: 70px auto;
+    height: 330px;
 
-            padding: 40px;
+    object-fit: cover;
 
-            background: #111;
+    display: block;
+}
 
-            border: 1px solid #292929;
+.actor-content {
+    padding: 20px;
+}
 
-            border-radius: 15px;
+.actor h3 {
+    color: #ffcc00;
+    font-size: 22px;
+}
 
-            text-align: center;
-        }
+.actor p {
+    color: #999;
+    margin-top: 5px;
+}
 
-        .review h2 {
-            color: #ffcc00;
-            margin-bottom: 15px;
-        }
 
-        .review p {
-            color: #aaa;
-            margin-bottom: 25px;
-        }
+/* ================= GALLERY ================= */
 
-        /* ================= FOOTER ================= */
+.gallery {
+    background: #0b0b0b;
+}
 
-        footer {
+.gallery-grid {
 
-            padding: 30px;
+    max-width: 1200px;
 
-            text-align: center;
+    margin: auto;
 
-            background: #020202;
+    display: grid;
 
-            border-top: 1px solid #222;
+    grid-template-columns:
+        repeat(auto-fit, minmax(250px, 1fr));
 
-            color: #777;
-        }
+    gap: 18px;
+}
 
-        footer span {
-            color: #ffcc00;
-        }
+.gallery-card {
 
-        /* ================= MOBILE ================= */
+    overflow: hidden;
 
-        @media (max-width: 700px) {
+    border-radius: 12px;
 
-            .navbar {
-                flex-direction: column;
-                gap: 15px;
-            }
+    border: 1px solid #292929;
+}
 
-            .nav-links {
-                gap: 15px;
-                flex-wrap: wrap;
-                justify-content: center;
-            }
+.gallery-card img {
 
-            .hero {
-                min-height: 75vh;
-                padding: 80px 6%;
-            }
+    width: 100%;
 
-            .hero h1 {
-                font-size: 55px;
-                letter-spacing: 4px;
-            }
+    height: 250px;
 
-            .hero h2 {
-                font-size: 20px;
-            }
+    object-fit: cover;
 
-            .section {
-                padding: 60px 5%;
-            }
+    display: block;
 
-            .section-title {
-                font-size: 32px;
-            }
+    transition: 0.5s;
+}
 
-            .actor img {
-                height: 350px;
-            }
+.gallery-card:hover img {
+    transform: scale(1.08);
+}
 
-            .review {
-                margin: 50px 5%;
-                padding: 25px;
-            }
 
-        }
+/* ================= MY PROJECT PHOTO ================= */
 
-        @media (max-width: 450px) {
+.project-section {
+    background: #050505;
+}
 
-            .logo {
-                font-size: 22px;
-            }
+.project-container {
 
-            .nav-links a {
-                font-size: 13px;
-            }
+    max-width: 1050px;
 
-            .hero h1 {
-                font-size: 45px;
-            }
+    margin: auto;
 
-            .hero-buttons .button {
-                margin-bottom: 10px;
-            }
+    background: #111;
 
-        }
+    padding: 20px;
 
-    </style>
+    border-radius: 18px;
 
-</head>
+    border: 1px solid #333;
 
+    box-shadow:
+        0 15px 50px rgba(0,0,0,0.6);
+}
 
-<body>
+.project-image {
 
+    width: 100%;
 
-<!-- ================= NAVBAR ================= -->
+    max-height: 650px;
 
-<nav class="navbar">
+    object-fit: cover;
 
-    <div class="logo">
-        DRISHYAM
-    </div>
+    display: block;
 
-    <ul class="nav-links">
+    border-radius: 12px;
 
-        <li>
-            <a href="#home">Home</a>
-        </li>
+    border: 2px solid #ffcc00;
 
-        <li>
-            <a href="#about">About</a>
-        </li>
+    transition: 0.5s;
+}
 
-        <li>
-            <a href="#cast">Cast</a>
-        </li>
+.project-image:hover {
 
-        <li>
-            <a href="#gallery">Gallery</a>
-        </li>
+    transform: scale(1.02);
 
-        <li>
-            <a href="#review">Review</a>
-        </li>
+    box-shadow:
+        0 0 35px rgba(255,204,0,0.35);
+}
 
-    </ul>
+.project-caption {
 
-</nav>
+    text-align: center;
 
-
-<!-- ================= HERO ================= -->
-
-<section class="hero" id="home">
-
-    <div class="hero-content">
-
-        <h1>
-            DRISHYAM
-        </h1>
-
-        <h2>
-            The Story That Changed Everything
-        </h2>
-
-        <p>
-            A gripping crime thriller about family, mystery,
-            evidence and the lengths people will go to protect
-            the ones they love.
-        </p>
-
-        <div class="hero-buttons">
-
-            <a href="#cast" class="button">
-                ⭐ Explore Cast
-            </a>
-
-            <a href="#gallery" class="button">
-                📸 View Gallery
-            </a>
-
-        </div>
-
-    </div>
-
-</section>
-
-
-<!-- ================= ABOUT ================= -->
-
-<section class="section about" id="about">
-
-    <h2 class="section-title">
-        About The Movie
-    </h2>
-
-    <div class="about-container">
-
-        <p>
-            Drishyam is a Hindi crime thriller known for its
-            suspenseful story and strong performances. The story
-            follows Vijay Salgaonkar and his family as they face
-            an extraordinary situation and attempt to protect
-            their family from a difficult investigation.
-        </p>
-
-    </div>
-
-
-    <div class="info-grid">
-
-        <div class="info-card">
-
-            <h3>Genre</h3>
-
-            <p>
-                Crime / Thriller
-            </p>
-
-        </div>
-
-
-        <div class="info-card">
-
-            <h3>Language</h3>
-
-            <p>
-                Hindi
-            </p>
-
-        </div>
-
-
-        <div class="info-card">
-
-            <h3>Release</h3>
-
-            <p>
-                2015
-            </p>
-
-        </div>
-
-
-        <div class="info-card">
-
-            <h3>Director</h3>
-
-            <p>
-                Nishikant Kamat
-            </p>
-
-        </div>
-
-    </div>
-
-</section>
-
-
-<!-- ================= CAST ================= -->
-
-<section class="section" id="cast">
-
-    <h2 class="section-title">
-        ⭐ Star Cast
-    </h2>
-
-
-    <div class="cast-container">
-
-
-        <!-- AJAY DEVGN -->
-
-        <div class="actor">
-
-            <img
-                src="https://upload.wikimedia.org/wikipedia/commons/6/6e/Ajay_Devgn_at_the_trailer_launch_of_%27Drishyam%27.jpg"
-                alt="Ajay Devgn"
-            >
-
-            <div class="actor-content">
-
-                <h3>
-                    Ajay Devgn
-                </h3>
-
-                <p>
-                    Vijay Salgaonkar
-                </p>
-
-            </div>
-
-        </div>
-
-
-        <!-- SHRIYA SARAN -->
-
-        <div class="actor">
-
-            <img
-                src="https://upload.wikimedia.org/wikipedia/commons/6/6c/Shriya_Saran_at_the_screening_of_Tadap.jpg"
-                alt="Shriya Saran"
-            >
-
-            <div class="actor-content">
-
-                <h3>
-                    Shriya Saran
-                </h3>
-
-                <p>
-                    Nandini Salgaonkar
-                </p>
-
-            </div>
-
-        </div>
-
-
-        <!-- TABU -->
-
-        <div class="actor">
-
-            <img
-                src="https://upload.wikimedia.org/wikipedia/commons/8/8e/Tabu_at_the_screening_of_Missing.jpg"
-                alt="Tabu"
-            >
-
-            <div class="actor-content">
-
-                <h3>
-                    Tabu
-                </h3>
-
-                <p>
-                    Meera Deshmukh
-                </p>
-
-            </div>
-
-        </div>
-
-
-        <!-- ISHITA DUTTA -->
-
-        <div class="actor">
-
-            <img
-                src="https://upload.wikimedia.org/wikipedia/commons/7/7e/Ishita_Dutta_at_the_screening_of_Drusshyam.jpg"
-                alt="Ishita Dutta"
-            >
-
-            <div class="actor-content">
-
-                <h3>
-                    Ishita Dutta
-                </h3>
-
-                <p>
-                    Anju Salgaonkar
-                </p>
-
-            </div>
-
-        </div>
-
-
-    </div>
-
-</section>
-
-
-<!-- ================= GALLERY ================= -->
-
-<section class="section gallery" id="gallery">
-
-    <h2 class="section-title">
-        📸 Movie Gallery
-    </h2>
-
-
-    <div class="gallery-grid">
-
-
-        <div class="gallery-card">
-
-            <img
-                src="https://images.unsplash.com/photo-1485846234645-a62644f84728?auto=format&fit=crop&w=1000&q=80"
-                alt="Movie camera"
-                loading="lazy"
-            >
-
-        </div>
-
-
-        <div class="gallery-card">
-
-            <img
-                src="https://images.unsplash.com/photo-1517604931442-7e0c8ed2963c?auto=format&fit=crop&w=1000&q=80"
-                alt="Cinema"
-                loading="lazy"
-            >
-
-        </div>
-
-
-        <div class="gallery-card">
-
-            <img
-                src="https://images.unsplash.com/photo-1489599849927-2ee91cede3ba?auto=format&fit=crop&w=1000&q=80"
-                alt="Cinema screen"
-                loading="lazy"
-            >
-
-        </div>
-
-
-        <div class="gallery-card">
-
-            <img
-                src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1000&q=80"
-                alt="Night scene"
-                loading="lazy"
-            >
-
-        </div>
-
-
-        <div class="gallery-card">
-
-            <img
-                src="https://images.unsplash.com/photo-1500534623283-312aade485b7?auto=format&fit=crop&w=1000&q=80"
-                alt="Movie scene"
-                loading="lazy"
-            >
-
-        </div>
-
-
-        <div class="gallery-card">
-
-            <img
-                src="https://images.unsplash.com/photo-1484417894907-623942c8ee29?auto=format&fit=crop&w=1000&q=80"
-                alt="Film production"
-                loading="lazy"
-            >
-
-        </div>
-
-
-    </div>
-
-</section>
-
-
-<!-- ================= REVIEW ================= -->
-
-<section class="review" id="review">
-
-    <h2>
-        📰 Movie Review
-    </h2>
-
-    <p>
-        Read more about the movie and its review.
-    </p>
-
-    <a
-        class="button"
-        href="https://timesofindia.indiatimes.com/entertainment/hindi/movie-reviews/drishyam-the-conclusion/movie-review/134629821.cms"
-        target="_blank"
-        rel="noopener noreferrer">
-
-        Read Review
-
-    </a>
-
-</section>
-
-
-<!-- ================= FOOTER ================= -->
-
-<footer>
-
-    <p>
-
-        © 2026
-
-        <span>
-            Drishyam Movie Website
-        </span>
-
-        | Jenkins + Tomcat Project
-
-    </p>
-
-</footer>
-
-
-</body>
-
-</html>
+    padding: 25px 10px
