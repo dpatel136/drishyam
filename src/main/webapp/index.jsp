@@ -3,8 +3,9 @@
     pageEncoding="UTF-8"%>
 
 <%
+/* EXACT Drishyam image embedded inside this JSP */
 String drishyamPoster =
-    "data:image/png;base64,PASTE_BASE64_IMAGE_HERE";
+    "data:image/png;base64,[YAHAN AAPKI EXACT IMAGE KA BASE64 HAI]";
 %>
 
 <!DOCTYPE html>
@@ -14,7 +15,7 @@ String drishyamPoster =
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Drishyam | Movie Website</title>
+<title>Drishyam | The Conclusion</title>
 
 <style>
 
@@ -32,7 +33,6 @@ body {
 }
 
 /* NAVBAR */
-
 .navbar {
     position: sticky;
     top: 0;
@@ -44,7 +44,7 @@ body {
 
     padding: 18px 7%;
 
-    background: rgba(5,5,15,0.95);
+    background: rgba(5,5,15,0.96);
     backdrop-filter: blur(10px);
 
     border-bottom: 1px solid rgba(255,165,0,0.2);
@@ -66,57 +66,59 @@ body {
 .nav-links a {
     color: white;
     text-decoration: none;
+    font-weight: 600;
 }
 
-/* HERO */
-
-.hero {
-    min-height: 90vh;
-
-    display: flex;
-    align-items: center;
-
-    padding: 80px 8%;
-
-    background-image:
-        linear-gradient(
-            90deg,
-            rgba(0,0,0,0.70),
-            rgba(0,0,0,0.25),
-            rgba(0,0,0,0.05)
-        ),
-        url("<%= drishyamPoster %>");
-
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
+.nav-links a:hover {
+    color: #ffae00;
 }
 
+/* EXACT IMAGE AT START */
+.hero-photo {
+    width: 100%;
+    background: #000;
+    overflow: hidden;
+}
+
+.hero-photo img {
+    display: block;
+    width: 100%;
+    height: auto;
+    max-height: 720px;
+    object-fit: cover;
+}
+
+/* HERO TEXT */
 .hero-content {
-    max-width: 650px;
+    padding: 55px 8%;
+    text-align: center;
+    background: linear-gradient(180deg, #090909, #050505);
 }
 
-.hero h1 {
-    font-size: clamp(55px,9vw,110px);
+.hero-content h1 {
+    font-size: clamp(45px, 7vw, 90px);
     color: #ffae00;
     line-height: 1;
     letter-spacing: 5px;
 }
 
-.hero h2 {
-    margin-top: 25px;
-    font-size: 38px;
+.hero-content h2 {
+    margin-top: 18px;
+    font-size: 34px;
 }
 
-.hero p {
-    margin-top: 20px;
-    color: #ddd;
-    font-size: 18px;
+.hero-content p {
+    margin: 18px auto 0;
+    max-width: 700px;
+    color: #ccc;
+    font-size: 17px;
+    line-height: 1.7;
 }
 
 .buttons {
-    margin-top: 35px;
+    margin-top: 28px;
     display: flex;
+    justify-content: center;
     gap: 15px;
 }
 
@@ -130,10 +132,13 @@ body {
     border-radius: 8px;
 }
 
-/* SECTION */
+.btn:hover {
+    background: #ffc14d;
+}
 
+/* SECTIONS */
 .section {
-    padding: 90px 8%;
+    padding: 85px 8%;
 }
 
 .section-title {
@@ -144,7 +149,6 @@ body {
 }
 
 /* ABOUT */
-
 .about {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -161,6 +165,8 @@ body {
 .about-text p {
     color: #ccc;
     font-size: 17px;
+    line-height: 1.8;
+    margin-bottom: 15px;
 }
 
 .poster-container {
@@ -169,17 +175,12 @@ body {
 
 .poster-container img {
     width: 100%;
-    max-width: 600px;
-
+    max-width: 650px;
     border-radius: 18px;
-
-    box-shadow:
-        0 20px 50px rgba(0,0,0,0.7),
-        0 0 30px rgba(255,174,0,0.15);
+    box-shadow: 0 20px 50px rgba(0,0,0,0.7);
 }
 
 /* MOBILE */
-
 @media(max-width:768px) {
 
     .navbar {
@@ -193,17 +194,17 @@ body {
         justify-content: center;
     }
 
-    .hero {
-        min-height: 75vh;
-        padding: 50px 6%;
-    }
-
-    .hero h1 {
-        font-size: 55px;
+    .hero-photo img {
+        width: 100%;
+        height: auto;
     }
 
     .about {
         grid-template-columns: 1fr;
+    }
+
+    .hero-content h1 {
+        font-size: 50px;
     }
 
 }
@@ -222,43 +223,57 @@ body {
     </div>
 
     <ul class="nav-links">
+
         <li><a href="#home">Home</a></li>
+
         <li><a href="#about">About</a></li>
+
         <li><a href="#cast">Cast</a></li>
+
         <li><a href="#gallery">Gallery</a></li>
+
         <li><a href="#project">My Project</a></li>
+
         <li><a href="#review">Review</a></li>
+
     </ul>
 
 </nav>
 
 
-<!-- HERO -->
+<!-- EXACT UPLOADED PHOTOGRAPHY IMAGE -->
 
-<section class="hero" id="home">
+<section class="hero-photo" id="home">
 
-    <div class="hero-content">
+    <img
+        src="<%= drishyamPoster %>"
+        alt="Drishyam The Conclusion">
 
-        <h1>DRISHYAM</h1>
+</section>
 
-        <h2>The Conclusion</h2>
 
-        <p>
-            The final chapter of the Drishyam story.
-            A family, a secret and a battle of minds.
-        </p>
+<!-- HERO TEXT -->
 
-        <div class="buttons">
+<section class="hero-content">
 
-            <a href="#about" class="btn">
-                Explore Movie
-            </a>
+    <h1>DRISHYAM</h1>
 
-            <a href="#gallery" class="btn">
-                View Gallery
-            </a>
+    <h2>The Conclusion</h2>
 
-        </div>
+    <p>
+        The final chapter of the Drishyam story.
+        A family, a secret and a battle of minds.
+    </p>
+
+    <div class="buttons">
+
+        <a href="#about" class="btn">
+            Explore Movie
+        </a>
+
+        <a href="#gallery" class="btn">
+            View Gallery
+        </a>
 
     </div>
 
@@ -277,11 +292,13 @@ body {
 
         <div class="about-text">
 
-            <h2>Drishyam The Conclusion</h2>
+            <h2>
+                Drishyam The Conclusion
+            </h2>
 
             <p>
                 Drishyam is a suspense thriller movie website
-                created using HTML, CSS, JavaScript and JSP.
+                created using JSP, HTML and CSS.
             </p>
 
             <p>
@@ -295,7 +312,7 @@ body {
 
             <img
                 src="<%= drishyamPoster %>"
-                alt="Drishyam The Conclusion">
+                alt="Drishyam The Conclusion Poster">
 
         </div>
 
@@ -316,7 +333,7 @@ body {
 
         <img
             src="<%= drishyamPoster %>"
-            alt="Drishyam The Conclusion Poster">
+            alt="Drishyam The Conclusion Gallery">
 
     </div>
 
