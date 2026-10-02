@@ -5,6 +5,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -12,480 +13,465 @@
 
 <style>
 
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    scroll-behavior: smooth;
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    scroll-behavior:smooth;
 }
 
-body {
-    font-family: Arial, Helvetica, sans-serif;
-    background: #050505;
-    color: #ffffff;
-    line-height: 1.6;
+body{
+    font-family:Arial,Helvetica,sans-serif;
+    background:#050505;
+    color:white;
+    line-height:1.6;
 }
 
 /* ================= NAVBAR ================= */
 
-.navbar {
-    position: sticky;
-    top: 0;
-    z-index: 1000;
+.navbar{
+    position:sticky;
+    top:0;
+    z-index:1000;
 
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
 
-    padding: 18px 7%;
+    padding:18px 7%;
 
-    background: rgba(5, 5, 15, 0.95);
-    backdrop-filter: blur(10px);
+    background:rgba(5,5,15,.95);
+    backdrop-filter:blur(10px);
 
-    border-bottom: 1px solid rgba(255, 165, 0, 0.2);
+    border-bottom:1px solid rgba(255,165,0,.2);
 }
 
-.logo {
-    color: #ff9d00;
-    font-size: 28px;
-    font-weight: 900;
-    letter-spacing: 3px;
+.logo{
+    color:#ff9d00;
+    font-size:28px;
+    font-weight:900;
+    letter-spacing:3px;
 }
 
-.nav-links {
-    display: flex;
-    gap: 25px;
-    list-style: none;
+.nav-links{
+    display:flex;
+    gap:25px;
+    list-style:none;
 }
 
-.nav-links a {
-    color: white;
-    text-decoration: none;
-    font-size: 14px;
-    transition: 0.3s;
+.nav-links a{
+    color:white;
+    text-decoration:none;
+    font-size:14px;
+    transition:.3s;
 }
 
-.nav-links a:hover {
-    color: #ffae00;
+.nav-links a:hover{
+    color:#ffae00;
 }
 
 /* ================= HERO ================= */
 
-.hero {
-    min-height: 90vh;
+.hero{
+    min-height:90vh;
 
-    display: flex;
-    align-items: center;
+    display:flex;
+    align-items:center;
 
-    padding: 80px 8%;
+    padding:80px 8%;
+
+    position:relative;
+    overflow:hidden;
 
     background:
         linear-gradient(
             90deg,
-            rgba(0,0,0,0.94),
-            rgba(5,5,30,0.72),
-            rgba(5,5,30,0.20)
+            rgba(0,0,0,.78) 0%,
+            rgba(0,0,0,.42) 45%,
+            rgba(0,0,0,.10) 100%
         ),
-        url("${pageContext.request.contextPath}/images/drishyam-conclusion.png");
+        url("PASTE-YOUR-POSTER-URL-HERE");
 
-    background-size: cover;
-    background-position: center right;
-
-    position: relative;
+    background-size:cover;
+    background-position:center;
+    background-repeat:no-repeat;
 }
 
-.hero-content {
-    max-width: 700px;
+.hero-content{
+    max-width:700px;
+    position:relative;
+    z-index:2;
 }
 
-.hero h1 {
-    font-size: clamp(55px, 9vw, 110px);
-    color: #ffae00;
-    line-height: 1;
-    letter-spacing: 5px;
+.hero h1{
+    font-size:clamp(55px,9vw,110px);
+    color:#ffae00;
+    line-height:1;
+    letter-spacing:5px;
 
     text-shadow:
         0 0 10px #ffae00,
-        0 0 30px rgba(255,174,0,0.6);
+        0 0 30px rgba(255,174,0,.6);
 }
 
-.hero h2 {
-    margin-top: 25px;
-    font-size: clamp(22px, 4vw, 38px);
+.hero h2{
+    margin-top:25px;
+    font-size:clamp(22px,4vw,38px);
 }
 
-.hero p {
-    margin-top: 20px;
-    max-width: 650px;
-    color: #dddddd;
-    font-size: 18px;
+.hero p{
+    margin-top:20px;
+    max-width:650px;
+    color:#ddd;
+    font-size:18px;
 }
 
-.buttons {
-    margin-top: 35px;
-    display: flex;
-    gap: 15px;
-    flex-wrap: wrap;
+.buttons{
+    margin-top:35px;
+    display:flex;
+    gap:15px;
+    flex-wrap:wrap;
 }
 
-.btn {
-    display: inline-block;
-    padding: 14px 28px;
+.btn{
+    display:inline-block;
+    padding:14px 28px;
 
-    background: #ffae00;
-    color: #111;
+    background:#ffae00;
+    color:#111;
 
-    text-decoration: none;
-    font-weight: bold;
+    text-decoration:none;
+    font-weight:bold;
 
-    border-radius: 8px;
-
-    transition: 0.3s;
+    border-radius:8px;
+    transition:.3s;
 }
 
-.btn:hover {
-    transform: translateY(-4px);
-    background: #ffc400;
-    box-shadow: 0 8px 25px rgba(255,174,0,0.35);
+.btn:hover{
+    transform:translateY(-4px);
+    background:#ffc400;
+    box-shadow:0 8px 25px rgba(255,174,0,.35);
 }
 
-.btn.secondary {
-    background: transparent;
-    color: white;
-    border: 1px solid #ffae00;
+.btn.secondary{
+    background:transparent;
+    color:white;
+    border:1px solid #ffae00;
 }
 
 /* ================= SECTIONS ================= */
 
-.section {
-    padding: 90px 8%;
+.section{
+    padding:90px 8%;
 }
 
-.section-title {
-    text-align: center;
-    font-size: 38px;
-    margin-bottom: 50px;
-    color: #ffae00;
+.section-title{
+    text-align:center;
+    font-size:38px;
+    margin-bottom:50px;
+    color:#ffae00;
 }
 
 /* ================= ABOUT ================= */
 
-.about {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 50px;
-    align-items: center;
+.about{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:50px;
+    align-items:center;
 }
 
-.about-text h2 {
-    font-size: 38px;
-    color: #ffae00;
-    margin-bottom: 20px;
+.about-text h2{
+    font-size:38px;
+    color:#ffae00;
+    margin-bottom:20px;
 }
 
-.about-text p {
-    color: #cccccc;
-    font-size: 17px;
+.about-text p{
+    color:#ccc;
+    font-size:17px;
 }
 
-.poster-container {
-    text-align: center;
+.poster-container{
+    text-align:center;
 }
 
-.poster-container img {
-    width: 100%;
-    max-width: 600px;
-    max-height: 450px;
+.poster-container img{
+    width:100%;
+    max-width:600px;
 
-    object-fit: contain;
-
-    border-radius: 18px;
+    border-radius:18px;
 
     box-shadow:
-        0 20px 50px rgba(0,0,0,0.7),
-        0 0 30px rgba(255,174,0,0.15);
+        0 20px 50px rgba(0,0,0,.7),
+        0 0 30px rgba(255,174,0,.15);
 }
 
 /* ================= INFO ================= */
 
-.info-grid {
-    margin-top: 50px;
+.info-grid{
+    margin-top:50px;
 
-    display: grid;
+    display:grid;
     grid-template-columns:
-        repeat(auto-fit, minmax(200px, 1fr));
+        repeat(auto-fit,minmax(200px,1fr));
 
-    gap: 20px;
+    gap:20px;
 }
 
-.info-card {
-    background: #11131d;
+.info-card{
+    background:#11131d;
+    padding:25px;
+    border-radius:15px;
 
-    padding: 25px;
+    text-align:center;
 
-    border-radius: 15px;
-
-    text-align: center;
-
-    border: 1px solid rgba(255,174,0,0.15);
-
-    transition: 0.3s;
+    border:1px solid rgba(255,174,0,.15);
+    transition:.3s;
 }
 
-.info-card:hover {
-    transform: translateY(-8px);
-    border-color: #ffae00;
+.info-card:hover{
+    transform:translateY(-8px);
+    border-color:#ffae00;
 }
 
-.info-card h3 {
-    color: #ffae00;
-    margin-bottom: 10px;
+.info-card h3{
+    color:#ffae00;
+    margin-bottom:10px;
 }
 
 /* ================= CAST ================= */
 
-.cast-container {
-    display: grid;
-
+.cast-container{
+    display:grid;
     grid-template-columns:
-        repeat(auto-fit, minmax(220px, 1fr));
+        repeat(auto-fit,minmax(220px,1fr));
 
-    gap: 30px;
+    gap:30px;
 }
 
-.actor {
-    background: #11131d;
+.actor{
+    background:#11131d;
+    border-radius:18px;
+    overflow:hidden;
 
-    border-radius: 18px;
+    text-align:center;
 
-    overflow: hidden;
-
-    text-align: center;
-
-    border: 1px solid rgba(255,174,0,0.15);
-
-    transition: 0.3s;
+    border:1px solid rgba(255,174,0,.15);
+    transition:.3s;
 }
 
-.actor:hover {
-    transform: translateY(-10px);
-    border-color: #ffae00;
-    box-shadow: 0 15px 35px rgba(0,0,0,0.5);
+.actor:hover{
+    transform:translateY(-10px);
+    border-color:#ffae00;
+    box-shadow:0 15px 35px rgba(0,0,0,.5);
 }
 
-.actor img {
-    width: 100%;
-    height: 300px;
+.actor img{
+    width:100%;
+    height:300px;
 
-    object-fit: cover;
+    object-fit:cover;
+    display:block;
 
-    display: block;
-
-    background: #222;
+    background:#222;
 }
 
-.actor h3 {
-    color: #ffae00;
-    margin-top: 18px;
+.actor h3{
+    color:#ffae00;
+    margin-top:18px;
 }
 
-.actor p {
-    color: #aaa;
-    padding-bottom: 20px;
+.actor p{
+    color:#aaa;
+    padding-bottom:20px;
 }
 
 /* ================= GALLERY ================= */
 
-.gallery-grid {
-    display: grid;
+.gallery-grid{
+    display:grid;
 
     grid-template-columns:
-        repeat(auto-fit, minmax(280px, 1fr));
+        repeat(auto-fit,minmax(280px,1fr));
 
-    gap: 25px;
+    gap:25px;
 }
 
-.gallery-card {
-    overflow: hidden;
+.gallery-card{
+    overflow:hidden;
+    border-radius:16px;
 
-    border-radius: 16px;
+    background:#11131d;
 
-    background: #11131d;
-
-    border: 1px solid rgba(255,174,0,0.15);
-
-    transition: 0.3s;
+    border:1px solid rgba(255,174,0,.15);
+    transition:.3s;
 }
 
-.gallery-card:hover {
-    transform: translateY(-8px);
-    border-color: #ffae00;
+.gallery-card:hover{
+    transform:translateY(-8px);
+    border-color:#ffae00;
 }
 
-.gallery-card img {
-    width: 100%;
-    height: 280px;
+.gallery-card img{
+    width:100%;
+    height:280px;
 
-    object-fit: cover;
-
-    display: block;
+    object-fit:cover;
+    display:block;
 }
 
-/* Main poster */
-
-.gallery-card.poster img {
-    object-fit: contain;
-    background: #000;
+.gallery-card.poster img{
+    object-fit:contain;
+    background:#000;
 }
 
 /* ================= PROJECT ================= */
 
-.project-section {
-    background: #080812;
+.project-section{
+    background:#080812;
 }
 
-.project-container {
-    max-width: 1000px;
-    margin: auto;
-
-    text-align: center;
+.project-container{
+    max-width:1000px;
+    margin:auto;
+    text-align:center;
 }
 
-.project-container h2 {
-    color: #ffae00;
-    font-size: 38px;
-    margin-bottom: 20px;
+.project-container h2{
+    color:#ffae00;
+    font-size:38px;
+    margin-bottom:20px;
 }
 
-.project-container p {
-    color: #bbb;
-    margin-bottom: 30px;
+.project-container p{
+    color:#bbb;
+    margin-bottom:30px;
 }
 
-.project-image {
-    width: 100%;
-    max-width: 900px;
+.project-image{
+    width:100%;
+    max-width:900px;
 
-    border-radius: 18px;
+    border-radius:18px;
 
-    border: 2px solid rgba(255,174,0,0.3);
+    border:2px solid rgba(255,174,0,.3);
 
-    box-shadow: 0 20px 50px rgba(0,0,0,0.6);
+    box-shadow:0 20px 50px rgba(0,0,0,.6);
 }
 
 /* ================= REVIEW ================= */
 
-.review {
-    text-align: center;
-
-    max-width: 900px;
-
-    margin: auto;
+.review{
+    text-align:center;
+    max-width:900px;
+    margin:auto;
 }
 
-.review p {
-    font-size: 21px;
-    color: #ddd;
-    margin-bottom: 30px;
+.review p{
+    font-size:21px;
+    color:#ddd;
+    margin-bottom:30px;
 }
 
-.review a {
-    color: #ffae00;
-    text-decoration: none;
-    font-weight: bold;
+.review a{
+    color:#ffae00;
+    text-decoration:none;
+    font-weight:bold;
 }
 
 /* ================= FOOTER ================= */
 
-footer {
-    text-align: center;
+footer{
+    text-align:center;
 
-    padding: 30px;
+    padding:30px;
 
-    background: #030303;
+    background:#030303;
 
-    color: #777;
+    color:#777;
 
-    border-top: 1px solid rgba(255,174,0,0.15);
+    border-top:1px solid rgba(255,174,0,.15);
 }
 
-footer span {
-    color: #ffae00;
+footer span{
+    color:#ffae00;
 }
 
 /* ================= MOBILE ================= */
 
-@media (max-width: 800px) {
+@media(max-width:800px){
 
-    .navbar {
-        flex-direction: column;
-        gap: 15px;
+    .navbar{
+        flex-direction:column;
+        gap:15px;
     }
 
-    .nav-links {
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: 15px;
+    .nav-links{
+        flex-wrap:wrap;
+        justify-content:center;
+        gap:15px;
     }
 
-    .hero {
-        min-height: 80vh;
-        padding: 60px 7%;
+    .hero{
+        min-height:80vh;
+        padding:60px 7%;
     }
 
-    .hero h1 {
-        font-size: 55px;
+    .hero h1{
+        font-size:55px;
     }
 
-    .hero p {
-        font-size: 16px;
+    .hero p{
+        font-size:16px;
     }
 
-    .about {
-        grid-template-columns: 1fr;
+    .about{
+        grid-template-columns:1fr;
     }
 
-    .section {
-        padding: 65px 6%;
+    .section{
+        padding:65px 6%;
     }
 
-    .section-title {
-        font-size: 30px;
+    .section-title{
+        font-size:30px;
     }
 
-    .actor img {
-        height: 330px;
+    .actor img{
+        height:330px;
     }
 }
 
-@media (max-width: 500px) {
+@media(max-width:500px){
 
-    .logo {
-        font-size: 22px;
+    .logo{
+        font-size:22px;
     }
 
-    .nav-links {
-        gap: 10px;
+    .nav-links{
+        gap:10px;
     }
 
-    .nav-links a {
-        font-size: 12px;
+    .nav-links a{
+        font-size:12px;
     }
 
-    .hero h1 {
-        font-size: 45px;
+    .hero h1{
+        font-size:45px;
     }
 
-    .buttons {
-        flex-direction: column;
+    .buttons{
+        flex-direction:column;
     }
 
-    .btn {
-        text-align: center;
+    .btn{
+        text-align:center;
     }
 }
 
 </style>
+
 </head>
 
 <body>
@@ -569,19 +555,16 @@ footer span {
 
         </div>
 
-
         <div class="poster-container">
 
             <img
-                src="${pageContext.request.contextPath}/images/drishyam-conclusion.png"
+                src="PASTE-YOUR-POSTER-URL-HERE"
                 alt="Drishyam The Conclusion Poster">
 
         </div>
 
     </div>
 
-
-    <!-- INFORMATION -->
 
     <div class="info-grid">
 
@@ -620,66 +603,49 @@ footer span {
 
     <div class="cast-container">
 
-
-        <!-- AJAY -->
-
         <div class="actor">
 
             <img
                 src="https://upload.wikimedia.org/wikipedia/commons/b/b3/Drishyam_Actor_Ajay_Devgn_with_suresh_sharma.JPG"
-                alt="Ajay Devgn"
-                onerror="this.src='${pageContext.request.contextPath}/images/ajay.jpg';">
+                alt="Ajay Devgn">
 
             <h3>Ajay Devgn</h3>
-
             <p>Vijay Salgaonkar</p>
 
         </div>
 
 
-        <!-- SHRIYA -->
-
         <div class="actor">
 
             <img
                 src="https://upload.wikimedia.org/wikipedia/commons/7/72/Shriya_Saran.jpg"
-                alt="Shriya Saran"
-                onerror="this.src='${pageContext.request.contextPath}/images/shriya.jpg';">
+                alt="Shriya Saran">
 
             <h3>Shriya Saran</h3>
-
             <p>Nandini Salgaonkar</p>
 
         </div>
 
 
-        <!-- TABU -->
-
         <div class="actor">
 
             <img
                 src="https://upload.wikimedia.org/wikipedia/commons/1/13/Drishyam_actres_Tabu_with_suresh_sharma.JPG"
-                alt="Tabu"
-                onerror="this.src='${pageContext.request.contextPath}/images/tabu.jpg';">
+                alt="Tabu">
 
             <h3>Tabu</h3>
-
             <p>Meera Deshmukh</p>
 
         </div>
 
 
-        <!-- ISHITA -->
-
         <div class="actor">
 
             <img
                 src="https://upload.wikimedia.org/wikipedia/commons/1/14/Ishita_Dutta_at_the_meet_of_film_%27Drishyam%27_at_PVR_Juhu.jpg"
-                alt="Ishita Dutta"
-                onerror="this.src='${pageContext.request.contextPath}/images/ishita.jpg';">
+                alt="Ishita Dutta">
 
             <h3>Ishita Dutta</h3>
-
             <p>Anju Salgaonkar</p>
 
         </div>
@@ -697,22 +663,16 @@ footer span {
         Drishyam Gallery
     </h2>
 
-
     <div class="gallery-grid">
-
-
-        <!-- YOUR UPLOADED POSTER -->
 
         <div class="gallery-card poster">
 
             <img
-                src="${pageContext.request.contextPath}/images/drishyam-conclusion.png"
+                src="PASTE-YOUR-POSTER-URL-HERE"
                 alt="Drishyam The Conclusion Poster">
 
         </div>
 
-
-        <!-- GROUP IMAGE -->
 
         <div class="gallery-card">
 
@@ -723,8 +683,6 @@ footer span {
         </div>
 
 
-        <!-- AJAY -->
-
         <div class="gallery-card">
 
             <img
@@ -734,8 +692,6 @@ footer span {
         </div>
 
 
-        <!-- TABU -->
-
         <div class="gallery-card">
 
             <img
@@ -744,8 +700,6 @@ footer span {
 
         </div>
 
-
-        <!-- ISHITA -->
 
         <div class="gallery-card">
 
@@ -774,8 +728,6 @@ footer span {
             through a Jenkins CI/CD pipeline.
         </p>
 
-        <!-- YOUR LAPTOP / PROJECT IMAGE -->
-
         <img
             class="project-image"
             src="${pageContext.request.contextPath}/images/my-project.jpg"
@@ -801,14 +753,6 @@ footer span {
             but a tiring finish."
         </p>
 
-        <a
-            href="https://timesofindia.indiatimes.com/entertainment/hindi/movie-reviews/drishyam-the-conclusion/movie-review/134629821.cms"
-            target="_blank">
-
-            Read Full Review →
-
-        </a>
-
     </div>
 
 </section>
@@ -824,7 +768,6 @@ footer span {
     </p>
 
 </footer>
-
 
 </body>
 </html>
