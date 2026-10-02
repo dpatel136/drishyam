@@ -82,14 +82,14 @@ body {
     background:
         linear-gradient(
             90deg,
-            rgba(0,0,0,0.98),
-            rgba(5,5,30,0.80),
-            rgba(5,5,30,0.35)
+            rgba(0,0,0,0.94),
+            rgba(5,5,30,0.72),
+            rgba(5,5,30,0.20)
         ),
-        url("${pageContext.request.contextPath}/images/drishyam-poster.jpg");
+        url("${pageContext.request.contextPath}/images/drishyam-conclusion.png");
 
     background-size: cover;
-    background-position: center;
+    background-position: center right;
 
     position: relative;
 }
@@ -195,9 +195,9 @@ body {
 .poster-container img {
     width: 100%;
     max-width: 600px;
-    max-height: 400px;
+    max-height: 450px;
 
-    object-fit: cover;
+    object-fit: contain;
 
     border-radius: 18px;
 
@@ -573,7 +573,7 @@ footer span {
         <div class="poster-container">
 
             <img
-                src="${pageContext.request.contextPath}/images/drishyam-poster.jpg"
+                src="${pageContext.request.contextPath}/images/drishyam-conclusion.png"
                 alt="Drishyam The Conclusion Poster">
 
         </div>
@@ -706,7 +706,7 @@ footer span {
         <div class="gallery-card poster">
 
             <img
-                src="${pageContext.request.contextPath}/images/drishyam-poster.jpg"
+                src="${pageContext.request.contextPath}/images/drishyam-conclusion.png"
                 alt="Drishyam The Conclusion Poster">
 
         </div>
