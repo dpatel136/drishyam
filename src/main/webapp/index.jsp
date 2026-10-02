@@ -3,15 +3,12 @@
     pageEncoding="UTF-8"%>
 
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-
 <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<meta name="viewport"
-      content="width=device-width, initial-scale=1.0">
-
-<title>Drishyam The Conclusion</title>
+<title>Drishyam | Movie Website</title>
 
 <style>
 
@@ -19,138 +16,814 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    scroll-behavior: smooth;
 }
 
 body {
-    background: #000;
-    color: white;
-    font-family: Arial, sans-serif;
+    font-family: Arial, Helvetica, sans-serif;
+    background: #050505;
+    color: #ffffff;
+    line-height: 1.6;
 }
 
-/* NAVBAR */
+/* ================= NAVBAR ================= */
 
-nav {
-    height: 80px;
-    background: #000;
+.navbar {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+
     display: flex;
-    align-items: center;
     justify-content: space-between;
-    padding: 0 7%;
+    align-items: center;
+
+    padding: 18px 7%;
+
+    background: rgba(5, 5, 15, 0.95);
+    backdrop-filter: blur(10px);
+
+    border-bottom: 1px solid rgba(255, 165, 0, 0.2);
 }
 
 .logo {
-    color: #ffd000;
-    font-size: 30px;
-    font-weight: bold;
+    color: #ff9d00;
+    font-size: 28px;
+    font-weight: 900;
+    letter-spacing: 3px;
 }
 
-nav a {
+.nav-links {
+    display: flex;
+    gap: 25px;
+    list-style: none;
+}
+
+.nav-links a {
     color: white;
     text-decoration: none;
-    margin-left: 30px;
+    font-size: 14px;
+    transition: 0.3s;
 }
 
-/* POSTER */
-
-.poster {
-    width: 100%;
-    text-align: center;
-    background: #000;
+.nav-links a:hover {
+    color: #ffae00;
 }
 
-.poster img {
-    width: 100%;
-    max-width: 1600px;
-    height: auto;
-    display: block;
-    margin: auto;
-}
-
-/* HERO */
+/* ================= HERO ================= */
 
 .hero {
-    text-align: center;
-    padding: 70px 20px;
+    min-height: 90vh;
+
+    display: flex;
+    align-items: center;
+
+    padding: 80px 8%;
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(0,0,0,0.98),
+            rgba(5,5,30,0.80),
+            rgba(5,5,30,0.35)
+        ),
+        url("${pageContext.request.contextPath}/images/drishyam-poster.jpg");
+
+    background-size: cover;
+    background-position: center;
+
+    position: relative;
+}
+
+.hero-content {
+    max-width: 700px;
 }
 
 .hero h1 {
-    color: #ffd000;
-    font-size: 60px;
+    font-size: clamp(55px, 9vw, 110px);
+    color: #ffae00;
+    line-height: 1;
+    letter-spacing: 5px;
+
+    text-shadow:
+        0 0 10px #ffae00,
+        0 0 30px rgba(255,174,0,0.6);
 }
 
 .hero h2 {
-    font-size: 30px;
-    margin-top: 10px;
+    margin-top: 25px;
+    font-size: clamp(22px, 4vw, 38px);
 }
 
 .hero p {
-    margin-top: 25px;
-    color: #ddd;
+    margin-top: 20px;
+    max-width: 650px;
+    color: #dddddd;
     font-size: 18px;
 }
 
-button {
-    margin-top: 30px;
-    padding: 15px 30px;
-    background: #ffd000;
-    border: none;
-    border-radius: 5px;
+.buttons {
+    margin-top: 35px;
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.btn {
+    display: inline-block;
+    padding: 14px 28px;
+
+    background: #ffae00;
+    color: #111;
+
+    text-decoration: none;
+    font-weight: bold;
+
+    border-radius: 8px;
+
+    transition: 0.3s;
+}
+
+.btn:hover {
+    transform: translateY(-4px);
+    background: #ffc400;
+    box-shadow: 0 8px 25px rgba(255,174,0,0.35);
+}
+
+.btn.secondary {
+    background: transparent;
+    color: white;
+    border: 1px solid #ffae00;
+}
+
+/* ================= SECTIONS ================= */
+
+.section {
+    padding: 90px 8%;
+}
+
+.section-title {
+    text-align: center;
+    font-size: 38px;
+    margin-bottom: 50px;
+    color: #ffae00;
+}
+
+/* ================= ABOUT ================= */
+
+.about {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 50px;
+    align-items: center;
+}
+
+.about-text h2 {
+    font-size: 38px;
+    color: #ffae00;
+    margin-bottom: 20px;
+}
+
+.about-text p {
+    color: #cccccc;
+    font-size: 17px;
+}
+
+.poster-container {
+    text-align: center;
+}
+
+.poster-container img {
+    width: 100%;
+    max-width: 600px;
+    max-height: 400px;
+
+    object-fit: cover;
+
+    border-radius: 18px;
+
+    box-shadow:
+        0 20px 50px rgba(0,0,0,0.7),
+        0 0 30px rgba(255,174,0,0.15);
+}
+
+/* ================= INFO ================= */
+
+.info-grid {
+    margin-top: 50px;
+
+    display: grid;
+    grid-template-columns:
+        repeat(auto-fit, minmax(200px, 1fr));
+
+    gap: 20px;
+}
+
+.info-card {
+    background: #11131d;
+
+    padding: 25px;
+
+    border-radius: 15px;
+
+    text-align: center;
+
+    border: 1px solid rgba(255,174,0,0.15);
+
+    transition: 0.3s;
+}
+
+.info-card:hover {
+    transform: translateY(-8px);
+    border-color: #ffae00;
+}
+
+.info-card h3 {
+    color: #ffae00;
+    margin-bottom: 10px;
+}
+
+/* ================= CAST ================= */
+
+.cast-container {
+    display: grid;
+
+    grid-template-columns:
+        repeat(auto-fit, minmax(220px, 1fr));
+
+    gap: 30px;
+}
+
+.actor {
+    background: #11131d;
+
+    border-radius: 18px;
+
+    overflow: hidden;
+
+    text-align: center;
+
+    border: 1px solid rgba(255,174,0,0.15);
+
+    transition: 0.3s;
+}
+
+.actor:hover {
+    transform: translateY(-10px);
+    border-color: #ffae00;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.5);
+}
+
+.actor img {
+    width: 100%;
+    height: 300px;
+
+    object-fit: cover;
+
+    display: block;
+
+    background: #222;
+}
+
+.actor h3 {
+    color: #ffae00;
+    margin-top: 18px;
+}
+
+.actor p {
+    color: #aaa;
+    padding-bottom: 20px;
+}
+
+/* ================= GALLERY ================= */
+
+.gallery-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(auto-fit, minmax(280px, 1fr));
+
+    gap: 25px;
+}
+
+.gallery-card {
+    overflow: hidden;
+
+    border-radius: 16px;
+
+    background: #11131d;
+
+    border: 1px solid rgba(255,174,0,0.15);
+
+    transition: 0.3s;
+}
+
+.gallery-card:hover {
+    transform: translateY(-8px);
+    border-color: #ffae00;
+}
+
+.gallery-card img {
+    width: 100%;
+    height: 280px;
+
+    object-fit: cover;
+
+    display: block;
+}
+
+/* Main poster */
+
+.gallery-card.poster img {
+    object-fit: contain;
+    background: #000;
+}
+
+/* ================= PROJECT ================= */
+
+.project-section {
+    background: #080812;
+}
+
+.project-container {
+    max-width: 1000px;
+    margin: auto;
+
+    text-align: center;
+}
+
+.project-container h2 {
+    color: #ffae00;
+    font-size: 38px;
+    margin-bottom: 20px;
+}
+
+.project-container p {
+    color: #bbb;
+    margin-bottom: 30px;
+}
+
+.project-image {
+    width: 100%;
+    max-width: 900px;
+
+    border-radius: 18px;
+
+    border: 2px solid rgba(255,174,0,0.3);
+
+    box-shadow: 0 20px 50px rgba(0,0,0,0.6);
+}
+
+/* ================= REVIEW ================= */
+
+.review {
+    text-align: center;
+
+    max-width: 900px;
+
+    margin: auto;
+}
+
+.review p {
+    font-size: 21px;
+    color: #ddd;
+    margin-bottom: 30px;
+}
+
+.review a {
+    color: #ffae00;
+    text-decoration: none;
     font-weight: bold;
 }
 
-</style>
+/* ================= FOOTER ================= */
 
+footer {
+    text-align: center;
+
+    padding: 30px;
+
+    background: #030303;
+
+    color: #777;
+
+    border-top: 1px solid rgba(255,174,0,0.15);
+}
+
+footer span {
+    color: #ffae00;
+}
+
+/* ================= MOBILE ================= */
+
+@media (max-width: 800px) {
+
+    .navbar {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .nav-links {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 15px;
+    }
+
+    .hero {
+        min-height: 80vh;
+        padding: 60px 7%;
+    }
+
+    .hero h1 {
+        font-size: 55px;
+    }
+
+    .hero p {
+        font-size: 16px;
+    }
+
+    .about {
+        grid-template-columns: 1fr;
+    }
+
+    .section {
+        padding: 65px 6%;
+    }
+
+    .section-title {
+        font-size: 30px;
+    }
+
+    .actor img {
+        height: 330px;
+    }
+}
+
+@media (max-width: 500px) {
+
+    .logo {
+        font-size: 22px;
+    }
+
+    .nav-links {
+        gap: 10px;
+    }
+
+    .nav-links a {
+        font-size: 12px;
+    }
+
+    .hero h1 {
+        font-size: 45px;
+    }
+
+    .buttons {
+        flex-direction: column;
+    }
+
+    .btn {
+        text-align: center;
+    }
+}
+
+</style>
 </head>
 
 <body>
 
-<!-- NAVBAR -->
+<!-- ================= NAVBAR ================= -->
 
-<nav>
+<nav class="navbar">
 
     <div class="logo">
         DRISHYAM
     </div>
 
-    <div>
-        <a href="#home">Home</a>
-        <a href="#about">About</a>
-        <a href="#cast">Cast</a>
-        <a href="#gallery">Gallery</a>
-    </div>
+    <ul class="nav-links">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#cast">Cast</a></li>
+        <li><a href="#gallery">Gallery</a></li>
+        <li><a href="#project">My Project</a></li>
+        <li><a href="#review">Review</a></li>
+    </ul>
 
 </nav>
 
 
-<!-- DRISHYAM REAL POSTER -->
+<!-- ================= HERO ================= -->
 
-<div class="poster" id="home">
+<section id="home" class="hero">
 
-    <img
-        src="${pageContext.request.contextPath}/images/drishyam-poster.jpg"
-        alt="Drishyam The Conclusion">
+    <div class="hero-content">
 
-</div>
+        <h1>DRISHYAM</h1>
 
+        <h2>The Story That Changed Everything</h2>
 
-<!-- MOVIE DETAILS -->
+        <p>
+            A gripping crime thriller about family, mystery,
+            evidence and the lengths people go to protect
+            the ones they love.
+        </p>
 
-<section class="hero">
+        <div class="buttons">
 
-    <h1>DRISHYAM</h1>
+            <a href="#cast" class="btn">
+                ⭐ Explore Cast
+            </a>
 
-    <h2>The Conclusion</h2>
+            <a href="#gallery" class="btn secondary">
+                🖼 View Gallery
+            </a>
 
-    <p>
-        The final chapter of the Drishyam story.
-        A family, a secret and a battle of minds.
-    </p>
+        </div>
 
-    <button>
-        Explore Movie
-    </button>
+    </div>
 
 </section>
+
+
+<!-- ================= ABOUT ================= -->
+
+<section id="about" class="section">
+
+    <div class="about">
+
+        <div class="about-text">
+
+            <h2>About Drishyam</h2>
+
+            <p>
+                Drishyam is a suspenseful crime thriller that
+                explores family, investigation, evidence and
+                the consequences of protecting loved ones.
+            </p>
+
+            <br>
+
+            <p>
+                The story follows Vijay Salgaonkar and his family
+                as they become involved in a mysterious incident
+                that leads to an intense police investigation.
+            </p>
+
+        </div>
+
+
+        <div class="poster-container">
+
+            <img
+                src="${pageContext.request.contextPath}/images/drishyam-poster.jpg"
+                alt="Drishyam The Conclusion Poster">
+
+        </div>
+
+    </div>
+
+
+    <!-- INFORMATION -->
+
+    <div class="info-grid">
+
+        <div class="info-card">
+            <h3>Genre</h3>
+            <p>Crime / Thriller</p>
+        </div>
+
+        <div class="info-card">
+            <h3>Language</h3>
+            <p>Hindi</p>
+        </div>
+
+        <div class="info-card">
+            <h3>Director</h3>
+            <p>Abhishek Pathak</p>
+        </div>
+
+        <div class="info-card">
+            <h3>Lead Actor</h3>
+            <p>Ajay Devgn</p>
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= CAST ================= -->
+
+<section id="cast" class="section">
+
+    <h2 class="section-title">
+        Star Cast
+    </h2>
+
+    <div class="cast-container">
+
+
+        <!-- AJAY -->
+
+        <div class="actor">
+
+            <img
+                src="https://upload.wikimedia.org/wikipedia/commons/b/b3/Drishyam_Actor_Ajay_Devgn_with_suresh_sharma.JPG"
+                alt="Ajay Devgn"
+                onerror="this.src='${pageContext.request.contextPath}/images/ajay.jpg';">
+
+            <h3>Ajay Devgn</h3>
+
+            <p>Vijay Salgaonkar</p>
+
+        </div>
+
+
+        <!-- SHRIYA -->
+
+        <div class="actor">
+
+            <img
+                src="https://upload.wikimedia.org/wikipedia/commons/7/72/Shriya_Saran.jpg"
+                alt="Shriya Saran"
+                onerror="this.src='${pageContext.request.contextPath}/images/shriya.jpg';">
+
+            <h3>Shriya Saran</h3>
+
+            <p>Nandini Salgaonkar</p>
+
+        </div>
+
+
+        <!-- TABU -->
+
+        <div class="actor">
+
+            <img
+                src="https://upload.wikimedia.org/wikipedia/commons/1/13/Drishyam_actres_Tabu_with_suresh_sharma.JPG"
+                alt="Tabu"
+                onerror="this.src='${pageContext.request.contextPath}/images/tabu.jpg';">
+
+            <h3>Tabu</h3>
+
+            <p>Meera Deshmukh</p>
+
+        </div>
+
+
+        <!-- ISHITA -->
+
+        <div class="actor">
+
+            <img
+                src="https://upload.wikimedia.org/wikipedia/commons/1/14/Ishita_Dutta_at_the_meet_of_film_%27Drishyam%27_at_PVR_Juhu.jpg"
+                alt="Ishita Dutta"
+                onerror="this.src='${pageContext.request.contextPath}/images/ishita.jpg';">
+
+            <h3>Ishita Dutta</h3>
+
+            <p>Anju Salgaonkar</p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= GALLERY ================= -->
+
+<section id="gallery" class="section">
+
+    <h2 class="section-title">
+        Drishyam Gallery
+    </h2>
+
+
+    <div class="gallery-grid">
+
+
+        <!-- YOUR UPLOADED POSTER -->
+
+        <div class="gallery-card poster">
+
+            <img
+                src="${pageContext.request.contextPath}/images/drishyam-poster.jpg"
+                alt="Drishyam The Conclusion Poster">
+
+        </div>
+
+
+        <!-- GROUP IMAGE -->
+
+        <div class="gallery-card">
+
+            <img
+                src="https://upload.wikimedia.org/wikipedia/commons/0/0f/Drishyam_star_cast_Ajay_Devgn%2C_Shriya_Saran_and_Tabu_with_suresh_sharma.jpg"
+                alt="Drishyam Star Cast">
+
+        </div>
+
+
+        <!-- AJAY -->
+
+        <div class="gallery-card">
+
+            <img
+                src="https://upload.wikimedia.org/wikipedia/commons/b/b3/Drishyam_Actor_Ajay_Devgn_with_suresh_sharma.JPG"
+                alt="Ajay Devgn">
+
+        </div>
+
+
+        <!-- TABU -->
+
+        <div class="gallery-card">
+
+            <img
+                src="https://upload.wikimedia.org/wikipedia/commons/1/13/Drishyam_actres_Tabu_with_suresh_sharma.JPG"
+                alt="Tabu">
+
+        </div>
+
+
+        <!-- ISHITA -->
+
+        <div class="gallery-card">
+
+            <img
+                src="https://upload.wikimedia.org/wikipedia/commons/1/14/Ishita_Dutta_at_the_meet_of_film_%27Drishyam%27_at_PVR_Juhu.jpg"
+                alt="Ishita Dutta">
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= MY PROJECT ================= -->
+
+<section id="project" class="section project-section">
+
+    <div class="project-container">
+
+        <h2>My Project</h2>
+
+        <p>
+            This responsive Drishyam movie website was developed
+            using JSP, HTML, CSS and Apache Tomcat and deployed
+            through a Jenkins CI/CD pipeline.
+        </p>
+
+        <!-- YOUR LAPTOP / PROJECT IMAGE -->
+
+        <img
+            class="project-image"
+            src="${pageContext.request.contextPath}/images/my-project.jpg"
+            alt="My Drishyam Website Project">
+
+    </div>
+
+</section>
+
+
+<!-- ================= REVIEW ================= -->
+
+<section id="review" class="section">
+
+    <div class="review">
+
+        <h2 class="section-title">
+            Movie Review
+        </h2>
+
+        <p>
+            "Crowd-pleasing thrills, mounting tension,
+            but a tiring finish."
+        </p>
+
+        <a
+            href="https://timesofindia.indiatimes.com/entertainment/hindi/movie-reviews/drishyam-the-conclusion/movie-review/134629821.cms"
+            target="_blank">
+
+            Read Full Review →
+
+        </a>
+
+    </div>
+
+</section>
+
+
+<!-- ================= FOOTER ================= -->
+
+<footer>
+
+    <p>
+        © 2026 <span>Drishyam Movie Website</span>
+        | Developed with JSP & Apache Tomcat
+    </p>
+
+</footer>
 
 
 </body>
