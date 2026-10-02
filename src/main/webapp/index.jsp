@@ -394,4 +394,504 @@ body {
 
     text-align: center;
 
-    padding: 25px 10px
+    padding: 25px 10px 10px;
+}
+
+.project-caption h3 {
+
+    color: #ffcc00;
+
+    font-size: 26px;
+
+    margin-bottom: 10px;
+}
+
+.project-caption p {
+
+    color: #aaa;
+
+    line-height: 1.7;
+
+}
+
+
+/* ================= REVIEW ================= */
+
+.review {
+
+    max-width: 1000px;
+
+    margin: 70px auto;
+
+    padding: 40px;
+
+    background: #111;
+
+    border: 1px solid #292929;
+
+    border-radius: 15px;
+
+    text-align: center;
+}
+
+.review h2 {
+    color: #ffcc00;
+}
+
+.review p {
+    color: #aaa;
+    margin-top: 15px;
+}
+
+
+/* ================= FOOTER ================= */
+
+footer {
+
+    padding: 30px;
+
+    text-align: center;
+
+    background: #020202;
+
+    border-top: 1px solid #222;
+
+    color: #777;
+}
+
+footer span {
+    color: #ffcc00;
+}
+
+
+/* ================= MOBILE ================= */
+
+@media(max-width: 700px) {
+
+    .navbar {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .nav-links {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 12px;
+    }
+
+    .hero {
+        min-height: 75vh;
+        padding: 80px 6%;
+    }
+
+    .hero h1 {
+        font-size: 55px;
+        letter-spacing: 4px;
+    }
+
+    .hero h2 {
+        font-size: 20px;
+    }
+
+    .section {
+        padding: 60px 5%;
+    }
+
+    .section-title {
+        font-size: 32px;
+    }
+
+    .actor img {
+        height: 350px;
+    }
+
+    .project-image {
+        max-height: 500px;
+    }
+
+}
+
+@media(max-width: 450px) {
+
+    .logo {
+        font-size: 22px;
+    }
+
+    .nav-links a {
+        font-size: 13px;
+    }
+
+    .hero h1 {
+        font-size: 45px;
+    }
+
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<!-- ================= NAVBAR ================= -->
+
+<nav class="navbar">
+
+    <div class="logo">
+        DRISHYAM
+    </div>
+
+    <ul class="nav-links">
+
+        <li>
+            <a href="#home">Home</a>
+        </li>
+
+        <li>
+            <a href="#about">About</a>
+        </li>
+
+        <li>
+            <a href="#cast">Cast</a>
+        </li>
+
+        <li>
+            <a href="#gallery">Gallery</a>
+        </li>
+
+        <li>
+            <a href="#project">My Project</a>
+        </li>
+
+        <li>
+            <a href="#review">Review</a>
+        </li>
+
+    </ul>
+
+</nav>
+
+
+<!-- ================= HERO ================= -->
+
+<section class="hero" id="home">
+
+    <div class="hero-content">
+
+        <h1>
+            DRISHYAM
+        </h1>
+
+        <h2>
+            The Story That Changed Everything
+        </h2>
+
+        <p>
+            A gripping crime thriller about family,
+            mystery, evidence and the lengths people
+            will go to protect the ones they love.
+        </p>
+
+        <a href="#cast" class="button">
+            ⭐ Explore Cast
+        </a>
+
+        <a href="#gallery" class="button">
+            📸 View Gallery
+        </a>
+
+    </div>
+
+</section>
+
+
+<!-- ================= ABOUT ================= -->
+
+<section class="section about" id="about">
+
+    <h2 class="section-title">
+        About The Movie
+    </h2>
+
+    <div class="about-container">
+
+        <p>
+            Drishyam is a Hindi crime thriller known for
+            its suspenseful story and strong performances.
+            The story follows Vijay Salgaonkar and his
+            family as they face an extraordinary situation
+            and attempt to protect their family.
+        </p>
+
+    </div>
+
+
+    <div class="info-grid">
+
+        <div class="info-card">
+
+            <h3>Genre</h3>
+
+            <p>Crime / Thriller</p>
+
+        </div>
+
+
+        <div class="info-card">
+
+            <h3>Language</h3>
+
+            <p>Hindi</p>
+
+        </div>
+
+
+        <div class="info-card">
+
+            <h3>Release</h3>
+
+            <p>2015</p>
+
+        </div>
+
+
+        <div class="info-card">
+
+            <h3>Director</h3>
+
+            <p>Nishikant Kamat</p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= STAR CAST ================= -->
+
+<section class="section" id="cast">
+
+    <h2 class="section-title">
+        ⭐ Star Cast
+    </h2>
+
+
+    <div class="cast-container">
+
+
+        <div class="actor">
+
+            <img
+                src="https://upload.wikimedia.org/wikipedia/commons/6/6e/Ajay_Devgn_at_the_trailer_launch_of_%27Drishyam%27.jpg"
+                alt="Ajay Devgn">
+
+            <div class="actor-content">
+
+                <h3>Ajay Devgn</h3>
+
+                <p>Vijay Salgaonkar</p>
+
+            </div>
+
+        </div>
+
+
+        <div class="actor">
+
+            <img
+                src="https://upload.wikimedia.org/wikipedia/commons/6/6c/Shriya_Saran_at_the_screening_of_Tadap.jpg"
+                alt="Shriya Saran">
+
+            <div class="actor-content">
+
+                <h3>Shriya Saran</h3>
+
+                <p>Nandini Salgaonkar</p>
+
+            </div>
+
+        </div>
+
+
+        <div class="actor">
+
+            <img
+                src="https://upload.wikimedia.org/wikipedia/commons/8/8e/Tabu_at_the_screening_of_Missing.jpg"
+                alt="Tabu">
+
+            <div class="actor-content">
+
+                <h3>Tabu</h3>
+
+                <p>Meera Deshmukh</p>
+
+            </div>
+
+        </div>
+
+
+        <div class="actor">
+
+            <img
+                src="https://upload.wikimedia.org/wikipedia/commons/7/7e/Ishita_Dutta_at_the_screening_of_Drusshyam.jpg"
+                alt="Ishita Dutta">
+
+            <div class="actor-content">
+
+                <h3>Ishita Dutta</h3>
+
+                <p>Anju Salgaonkar</p>
+
+            </div>
+
+        </div>
+
+
+    </div>
+
+</section>
+
+
+<!-- ================= GALLERY ================= -->
+
+<section class="section gallery" id="gallery">
+
+    <h2 class="section-title">
+        📸 Movie Gallery
+    </h2>
+
+
+    <div class="gallery-grid">
+
+
+        <div class="gallery-card">
+
+            <img
+                src="https://images.unsplash.com/photo-1485846234645-a62644f84728?auto=format&fit=crop&w=1000&q=80"
+                alt="Movie Camera"
+                loading="lazy">
+
+        </div>
+
+
+        <div class="gallery-card">
+
+            <img
+                src="https://images.unsplash.com/photo-1517604931442-7e0c8ed2963c?auto=format&fit=crop&w=1000&q=80"
+                alt="Cinema"
+                loading="lazy">
+
+        </div>
+
+
+        <div class="gallery-card">
+
+            <img
+                src="https://images.unsplash.com/photo-1489599849927-2ee91cede3ba?auto=format&fit=crop&w=1000&q=80"
+                alt="Cinema Screen"
+                loading="lazy">
+
+        </div>
+
+
+        <div class="gallery-card">
+
+            <img
+                src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1000&q=80"
+                alt="Movie Scene"
+                loading="lazy">
+
+        </div>
+
+
+    </div>
+
+</section>
+
+
+<!-- ================= YOUR UPLOADED PHOTO ================= -->
+
+<section class="section project-section" id="project">
+
+    <h2 class="section-title">
+        💻 My Drishyam Project
+    </h2>
+
+
+    <div class="project-container">
+
+        <img
+            src="${pageContext.request.contextPath}/images/drishyam-laptop.jpg"
+            alt="Drishyam Website Project on Laptop"
+            class="project-image">
+
+
+        <div class="project-caption">
+
+            <h3>
+                Drishyam Movie Website
+            </h3>
+
+            <p>
+                This is my Drishyam movie website project,
+                developed using JSP, HTML and CSS and
+                deployed on Apache Tomcat using Jenkins.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= REVIEW ================= -->
+
+<section class="review" id="review">
+
+    <h2>
+        📰 Movie Review
+    </h2>
+
+    <p>
+        Read more about the movie and its review.
+    </p>
+
+    <a
+        class="button"
+        href="https://timesofindia.indiatimes.com/entertainment/hindi/movie-reviews/drishyam-the-conclusion/movie-review/134629821.cms"
+        target="_blank"
+        rel="noopener noreferrer">
+
+        Read Review
+
+    </a>
+
+</section>
+
+
+<!-- ================= FOOTER ================= -->
+
+<footer>
+
+    <p>
+
+        © 2026
+
+        <span>
+            Drishyam Movie Website
+        </span>
+
+        | Jenkins + Tomcat Project
+
+    </p>
+
+</footer>
+
+
+</body>
+
+</html>
